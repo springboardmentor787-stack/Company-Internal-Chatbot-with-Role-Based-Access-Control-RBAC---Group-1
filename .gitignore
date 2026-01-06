@@ -1,0 +1,10 @@
+# Virtual environment
+venv/
+
+# Data repo
+Fintech-data/
+
+# Editor / system files
+history/
+__pycache__/
+*.pyc
