@@ -1,43 +1,41 @@
 from backend.app.rbac import load_data
 from backend.app.clean_documents import clean_documents
-from backend.app.chroma_store import build_vector_store
+from backend.app.chroma_store import build_vector_store, get_chroma_stats
 from langchain.text_splitter import TokenTextSplitter
 
 
 role = input("Enter your role: ")
 filter = input("Enter data filter (hr / finance / engineering / marketing / general): ")
 
+persist_dir = f"db/chroma_{role}_{filter}"
+
 docs = load_data(role, filter)
 
-# ---- RBAC FAILURE HANDLING ----
+# ---------- RBAC FAILURE ----------
 if not docs:
     print("\n❌ Access Denied")
 
-    print("\n🔹 Building empty Chroma Vector Store...")
+    print("\n🔹 Opening Chroma Vector Store...")
+    db = build_vector_store([], persist_dir)
 
-    db = build_vector_store(
-        [],
-        persist_dir=f"db/chroma_{role}_{filter}"
-    )
+    chunk_count = db._collection.count()
 
-    print("\nTotal documents loaded: 0")
-    print("Total chunks created: 0")
-    print("Vector DB Ready (empty)")
+    print(f"\nTotal documents loaded: 0")
+    print(f"Total chunks created: {chunk_count}")
+    print("Vector DB Ready")
     exit()
+# --------------------------------
 
-# ------------------------------
 
-# Extract text for cleaning
+# Extract raw text
 raw_texts = [d["text"] for d in docs]
-
 print(f"\nBefore cleaning: {len(raw_texts)}")
 
-# CLEAN
+# Clean
 cleaned = clean_documents(raw_texts)
-
 print(f"After cleaning: {len(cleaned)}")
 
-# Reattach metadata after cleaning
+# Reattach metadata
 documents = []
 for i in range(len(cleaned)):
     documents.append({
@@ -45,9 +43,8 @@ for i in range(len(cleaned)):
         "metadata": docs[i]["metadata"]
     })
 
-# TOKEN CHUNKING (for visual verification)
+# Visual chunk check
 splitter = TokenTextSplitter(chunk_size=400, chunk_overlap=50)
-
 print("\n🔹 Cleaned & Chunked output:\n")
 
 for i, doc in enumerate(documents):
@@ -56,15 +53,16 @@ for i, doc in enumerate(documents):
         print(f"\n--- Document {i+1} | Chunk {j+1} ---")
         print(chunk)
 
-# BUILD CHROMA VECTOR DB
+# Build Chroma
 print("\n🔹 Building Chroma Vector Store...\n")
+build_vector_store(documents, persist_dir)
 
-db = build_vector_store(
-    documents,
-    persist_dir=f"db/chroma_{role}_{filter}"
-)
+# Read stats FROM CHROMA
+doc_count, chunk_count = get_chroma_stats(persist_dir)
 
-print("\n✅ Vector DB Ready")
+print(f"\nTotal documents loaded: {doc_count}")
+print(f"Total chunks created: {chunk_count}")
+print("Vector DB Ready")
 
 
 
