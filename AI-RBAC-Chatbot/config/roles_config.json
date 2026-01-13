@@ -1,0 +1,14 @@
+{
+    "Finance": ["Finance", "C-Level"],
+    "HR": ["HR", "C-Level"],
+    "marketing": ["Marketing", "C-Level"],
+    "engineering": ["Engineering", "C-Level"],
+    "general": [
+      "Finance",
+      "HR",
+      "Marketing",
+      "Engineering",
+      "C-Level"
+    ]
+  }
+  

@@ -1,0 +1,15 @@
+# macOS junk
+.DS_Store
+
+# virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# chroma db generated files
+AI-RBAC-Chatbot/src/db/
+chroma/
+*.sqlite3
+
+# env
+.env
