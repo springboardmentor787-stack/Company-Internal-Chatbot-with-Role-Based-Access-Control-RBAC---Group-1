@@ -21,7 +21,7 @@ def create_chroma_db():
         persist_directory=PERSIST_DIR
     )
 
-    vectordb.persist()
+    
     print("Chroma DB created successfully.")
 
     return vectordb

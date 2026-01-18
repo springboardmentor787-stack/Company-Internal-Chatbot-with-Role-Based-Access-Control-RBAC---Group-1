@@ -14,6 +14,9 @@ def chunk_documents():
 
     # Step 3: Split documents into chunks
     chunks = text_splitter.split_documents(documents)
+    for idx, chunk in enumerate(chunks):
+        chunk.metadata["chunk_id"] = idx
+
 
     print(f"Total chunks created: {len(chunks)}")
 

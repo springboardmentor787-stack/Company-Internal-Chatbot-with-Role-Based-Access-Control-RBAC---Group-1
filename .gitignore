@@ -8,3 +8,5 @@ Fintech-data/
 history/
 __pycache__/
 *.pyc
+
+chroma_db/
