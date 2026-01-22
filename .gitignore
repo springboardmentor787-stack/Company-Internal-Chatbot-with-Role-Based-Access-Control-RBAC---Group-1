@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# Vector database
+chroma_db/
+
+# Dataset
+Fintech-data/
+
+# Logs / temp files
+access_audit_log.csv
+tone-2
+
+# Python cache
+__pycache__/
+*.pyc
