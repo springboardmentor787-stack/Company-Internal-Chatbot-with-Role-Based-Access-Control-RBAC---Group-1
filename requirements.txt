@@ -1,0 +1,8 @@
+fastapi
+streamlit
+langchain
+sentence-transformers
+chromadb
+pandas
+python-dotenv
+pyjwt
