@@ -72,7 +72,7 @@ Location: `milestone_4_frontend_deployment/`
 
 - Backend: FastAPI, Python 3.8+  
 - Frontend: Streamlit  
-- Vector Database: Chroma / Qdrant (free tier)  
+- Vector Database: Chroma   
 - Embeddings: Sentence-Transformers (all-MiniLM-L6-v2)  
 - LLM: OpenAI GPT (free tier) / HuggingFace  
 - Database: SQLite  
