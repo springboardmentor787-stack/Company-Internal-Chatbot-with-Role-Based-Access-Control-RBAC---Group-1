@@ -20,4 +20,18 @@ Milestone 1 focuses on preparing documents so they can later be used in a secure
 5️⃣ Document Chunking To ensure efficient retrieval and accurate search: Documents are split into smaller chunks using RecursiveCharacterTextSplitter Chunk Configuration: 500 tokens per chunk 50 token overlap This ensures: Context is preserved Large documents remain searchable
 Access control can be applied at a fine-grained level
 6️⃣ Embedding Generation Each document chunk is converted into a numerical vector using: sentence-transformers/all-MiniLM-L6-v2 These embeddings capture the semantic meaning of the text and enable similarity-based retrieval.
-7️⃣ Vector Database Storage All embedded chunks are stored in a persistent ChromaDB vector database. Each vector is stored along with its metadata The database is persisted locally for reuse across runs Metadata remains tightly coupled with embeddings to support secure filtering
+7️⃣ Vector Database Storage All embedded chunks are stored in a persistent ChromaDB vector database. Each vector is stored along with its metadata The database is persisted locally for reuse across runs Metadata remains tightly coupled with embeddings to support secure filtering.
+Embedding generation module  
+● Populated vector database with indexed documents  
+● Semantic search functionality and query interface  
+● Search quality and performance benchmarking report 
+● Build RBAC filtering logic for document access based on user roles  
+● Implement role hierarchy: C-Level access > department staff access > 
+general employee access Preprocess and normalize incoming queries  
+● Select most relevant document chunks for each query  
+● Test and validate role-based access: verify Finance users cannot 
+access HR documents, etc. 
+Role-based access control filtering module  
+● Query processing and normalization utilities  
+● Role permission configuration and hierarchy definition  
+● Role-based access validation test suite and results  
