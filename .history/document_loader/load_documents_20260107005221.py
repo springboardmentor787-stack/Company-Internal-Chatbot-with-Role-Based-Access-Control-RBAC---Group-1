@@ -35,19 +35,13 @@ def load_documents():
             else:
                 continue
 
-            # METADATA 
-            for i, doc in enumerate(docs):
-                doc.metadata.update({
-                    "role": role,
-                    "source": file,
-                    "file_path": file_path,
-                    "doc_id": f"{file}_{i}",
-                    "content_type": file.split(".")[-1]
-                })
+            for doc in docs:
+                doc.metadata["role"] = role
+                doc.metadata["source"] = file
 
             documents.extend(docs)
 
-    print(f"✅ Total documents loaded: {len(documents)}")
+    print(f"Total documents loaded: {len(documents)}")
     return documents
 
 

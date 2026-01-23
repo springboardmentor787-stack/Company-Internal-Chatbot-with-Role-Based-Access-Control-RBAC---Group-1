@@ -35,7 +35,7 @@ def load_documents():
             else:
                 continue
 
-            # METADATA 
+            # ✅ E METADATA (IMPORTANT)
             for i, doc in enumerate(docs):
                 doc.metadata.update({
                     "role": role,
