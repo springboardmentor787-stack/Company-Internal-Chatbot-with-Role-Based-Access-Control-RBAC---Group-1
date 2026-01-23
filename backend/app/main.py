@@ -7,6 +7,8 @@ from langchain.text_splitter import TokenTextSplitter
 role = input("Enter your role: ")
 filter = input("Enter data filter (hr / finance / engineering / marketing / general): ")
 
+
+
 persist_dir = f"db/chroma_{role}_{filter}"
 
 docs = load_data(role, filter)
