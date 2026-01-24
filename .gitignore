@@ -1,9 +1,0 @@
-# Python cache
-__pycache__/
-*.pyc
-
-# Virtual environment
-venv/
-
-# ChromaDB persistence
-backend/rag/chroma_db/
