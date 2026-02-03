@@ -1,0 +1,21 @@
+2026-02-02 23:07:12 finance Finance /secure-search
+2026-02-02 23:12:36 finance Finance /secure-search
+2026-02-02 23:12:49 finance Finance /secure-search
+2026-02-02 23:21:55 hr HR /secure-search
+2026-02-02 23:28:12 hr HR /secure-search?department=hr
+2026-02-02 23:28:25 hr HR /secure-search?department=general
+2026-02-03 13:16:00 finance finance CHAT: what is the financial summary? | confidence=0.46
+2026-02-03 13:22:22 finance finance "what is the financial summary?" 0.46
+2026-02-03 15:11:19 hr hr "leave policy" 0.44
+2026-02-03 15:12:01 hr hr "financial revenue" 0.43
+2026-02-03 15:13:33 hr hr "Q1 financial report" 0.45
+2026-02-03 15:24:34 hr hr "financial revenue" 0.43
+2026-02-03 15:27:02 hr hr "leave policy" 0.44
+2026-02-03 15:29:28 eng engineering "company working hours" 0.44
+2026-02-03 15:31:21 finance finance "Who is the Prime Minister of Japan?" 0.0
+2026-02-03 15:33:23 finance finance "PM of Japan" 0.0
+2026-02-03 15:34:39 finance finance "Q1 revenue" 0.47
+2026-02-03 15:38:01 hr hr "financial revenue" 0.43
+2026-02-03 19:29:50 finance finance "Who is the PM of India?" 0.0
+2026-02-03 19:30:28 finance finance "Q1 revenue report" 0.46
+2026-02-03 19:32:32 finance finance "What is company vision and mission?" 0.43
