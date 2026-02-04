@@ -63,7 +63,7 @@ def secure_search(
     rbac_required(department)(current_user)
 
     # LOG
-    log_access(username, role, f"/secure-search?department={department}")
+    log_access(username, role, f"/secure-search?department={department}", confidence=1.0)
 
     return {
         "requested_department": department,
