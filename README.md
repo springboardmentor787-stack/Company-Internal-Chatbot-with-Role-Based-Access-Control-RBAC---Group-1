@@ -184,109 +184,146 @@ This ensures that:
 ---
 
 # 🚀 Milestone 3: Backend Authentication with RBAC and RAG/LLM Integration
-**🔹 Module 5: Backend Authentication & RBAC Middleware**
 
-Module 5 introduces a fully functional backend with secure authentication and role-based access control.
-✔ FastAPI Backend Setup
--FastAPI backend initialized and modularized
--Clean separation of authentication, database, routes, and middleware
--Swagger / OpenAPI enabled for interactive API testing
+---
 
-✔ User Database (SQLite)
--SQLite database implemented using SQLAlchemy
--User model includes:
--Username
--Hashed password
--Role
--Sample users created for RBAC validation
+## 🔹 Module 5: Backend Authentication & RBAC Middleware
 
-✔ Authentication (Login Flow)
--Secure login endpoint implemented
--Passwords verified using hashing
--Successful login returns a JWT access token
+Module 5 focuses on building a **secure backend foundation** with authentication and role-based access control, ensuring that every request is properly verified before accessing protected resources.
 
-✔ JWT Token Handling
-JWT tokens contain:
--Username
--Role
--Tokens are validated on every protected request
--Invalid or missing tokens are rejected automatically
+---
 
-✔ RBAC Middleware & Protected Routes
--Centralized role-based access control (RBAC) dependency
--Role checks applied at route level
--Access examples:
---HR-only endpoints
---Finance-only endpoints
---Engineering endpoints
---C-Level full-access endpoints
---General employee endpoints
+### ✔ FastAPI Backend Setup
+- FastAPI backend initialized and modularized
+- Clean separation of concerns:
+  - Authentication
+  - Database
+  - Routes
+  - Middleware
+- Swagger / OpenAPI enabled for interactive API testing
 
-✅ Module 5 Outcome
--Secure authentication system implemented
--Consistent RBAC enforcement across backend
--Backend ready for AI-powered document workflows
+---
 
-**🔹 Module 6: RAG Pipeline & LLM Integration**
+### ✔ User Database (SQLite)
+- SQLite database implemented using SQLAlchemy
+- User model includes:
+  - Username
+  - Hashed password
+  - Role
+- Sample users created to validate RBAC logic
 
-Module 6 integrates a secure Retrieval-Augmented Generation (RAG) pipeline with the RBAC-enabled backend.
+---
 
-🧠 Objective
--To generate AI responses only from authorized documents, with:
--Role-aware filtering
--Source attribution
--Confidence scoring
+### ✔ Authentication (Login Flow)
+- Secure login endpoint implemented
+- Passwords verified using hashing
+- Successful login returns a **JWT access token**
 
-🔗 RAG Pipeline Flow
+---
+
+### ✔ JWT Token Handling
+- JWT tokens contain:
+  - Username
+  - Role
+- Tokens are validated on every protected request
+- Invalid or missing tokens are rejected automatically
+
+---
+
+### ✔ RBAC Middleware & Protected Routes
+- Centralized role-based access control (RBAC) dependency
+- Role checks applied at route level
+- Access examples:
+  - HR-only endpoints
+  - Finance-only endpoints
+  - Engineering endpoints
+  - C-Level full-access endpoints
+  - General employee endpoints
+
+---
+
+### ✅ Module 5 Outcome
+- Secure authentication system implemented
+- Consistent RBAC enforcement across backend
+- Backend ready for AI-powered document workflows
+
+---
+
+## 🔹 Module 6: RAG Pipeline & LLM Integration
+
+Module 6 integrates a **secure Retrieval-Augmented Generation (RAG)** pipeline with the RBAC-enabled backend.
+
+---
+
+### 🧠 Objective
+To generate AI responses **only from authorized documents**, with:
+- Role-aware filtering
+- Source attribution
+- Confidence scoring
+
+---
+
+### 🔗 RAG Pipeline Flow
 User → Authentication
-     → Role Identification
-     → RBAC-Filtered Retrieval
-     → Context Assembly
-     → LLM Response Generation
-     → Source Attribution + Confidence Score
+→ Role Identification
+→ RBAC-Filtered Retrieval
+→ Context Assembly
+→ LLM Response Generation
+→ Source Attribution + Confidence Score
 
-🤖 LLM Integration
--Free HuggingFace LLM used for response generation
--LLM never accesses raw documents directly
--Only authorized document chunks are provided as context
--Prompt structure reduces hallucinations
+---
 
-🧩 Prompt Design
--System instructions
--Retrieved document context
--User query
--Explicit instruction to answer only from provided context
+### 🤖 LLM Integration
+- Free HuggingFace LLM used for response generation
+- LLM never accesses raw documents directly
+- Only authorized document chunks are provided as context
+- Prompt structure reduces hallucinations
 
-📌 Source Attribution
+---
+
+### 🧩 Prompt Design
+- System instructions
+- Retrieved document context
+- User query
+- Explicit instruction to answer **only from provided context**
+
+---
+
+### 📌 Source Attribution
 Each response includes:
--File name
--Department
--Chunk ID
--Relevance score
--This makes the system auditable and explainable.
+- File name
+- Department
+- Chunk ID
+- Relevance score
 
-📊 Confidence Scoring
--Confidence score is calculated using:
--Average similarity score of retrieved chunks
--Number of relevant chunks used
--Normalized relevance range
--This avoids blind trust in AI responses.
+This makes the system **auditable and explainable**.
 
-✅ Module 6 Outcome
--End-to-end secure RAG pipeline implemented
--Role-based document retrieval enforced
--AI responses generated only from authorized data
--Source attribution and confidence scoring included
--System ready for UI integration or production hardening
+---
 
-🔐 Final Security Guarantee
+### 📊 Confidence Scoring
+Confidence score is calculated using:
+- Average similarity score of retrieved chunks
+- Number of relevant chunks used
+- Normalized relevance range
+
+This avoids blind trust in AI responses.
+
+---
+
+### ✅ Module 6 Outcome
+- End-to-end secure RAG pipeline implemented
+- Role-based document retrieval enforced
+- AI responses generated only from authorized data
+- Source attribution and confidence scoring included
+- System ready for UI integration or production hardening
+
+---
+
+## 🔐 Final Security Guarantee
+
 At no point can:
--HR access Finance documents
--Engineering access HR data
--General employees access restricted departments
--Even when documents are semantically similar, RBAC always takes priority.
+- HR access Finance documents
+- Engineering access HR data
+- General employees access restricted departments
 
-
-
-
-
+Even when documents are semantically similar, **RBAC always takes priority**.
