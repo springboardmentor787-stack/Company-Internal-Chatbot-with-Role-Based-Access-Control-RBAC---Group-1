@@ -13,3 +13,12 @@ chroma/
 
 # env
 .env
+# local runtime / db
+AI-RBAC-Chatbot/db/
+AI-RBAC-Chatbot/users.db
+AI-RBAC-Chatbot/backend/
+
+# python
+__pycache__/
+*.pyc
+venv/

@@ -4,24 +4,16 @@ from chunk_doc import chunked_documents
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# -----------------------------
-# Embedding model (used only for DB storage)
-# -----------------------------
 embedding_model = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
 )
 
-# -----------------------------
-# User input
-# -----------------------------
+
 user_role = input("Enter your role: ").strip()
 data_filter = input(
     "Enter data filter (hr / finance / engineering / marketing / general): "
 ).strip().lower()
 
-# -----------------------------
-# Load RBAC mapping
-# -----------------------------
 ROLE_MAPPING = load_role_mapping()
 
 dept_map = {
@@ -40,9 +32,7 @@ if data_filter not in dept_map:
 dept_name = dept_map[data_filter]
 allowed_roles = ROLE_MAPPING.get(dept_name, [])
 
-# -----------------------------
-# RBAC check
-# -----------------------------
+
 if user_role not in allowed_roles:
     print("Access Denied")
     print("Accessible files: 0")
@@ -50,17 +40,11 @@ if user_role not in allowed_roles:
 
 print("Access Granted")
 
-# -----------------------------
-# Filter chunks by department
-# -----------------------------
 filtered_chunks = [
     doc for doc in chunked_documents
     if doc.metadata.get("dept", "").lower() == data_filter
 ]
 
-# -----------------------------
-# Count unique files + pick one sample doc
-# -----------------------------
 unique_file_names = set()
 sample_doc = None
 
@@ -80,9 +64,7 @@ if file_count == 0:
 
 print(f"Accessible files: {file_count}")
 
-# -----------------------------
-# (Optional) Store in ChromaDB
-# -----------------------------
+
 clean_docs = []
 for doc in filtered_chunks:
     d = doc.model_copy()
@@ -105,9 +87,6 @@ if not db_exists:
 else:
     print("Vector database already exists, reusing it")
 
-# -----------------------------
-# Sample preview
-# -----------------------------
 print("\nSAMPLE PREVIEW\n")
 print("File:", sample_doc.metadata.get("source"))
 print("Department:", sample_doc.metadata.get("dept"))
