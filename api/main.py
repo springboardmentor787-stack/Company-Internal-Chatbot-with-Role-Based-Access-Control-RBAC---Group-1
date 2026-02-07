@@ -1,7 +1,9 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-
+from fastapi import FastAPI, Depends
+from api.auth.auth_routes import router as auth_router
+from api.auth.jwt_utils import get_current_user
 from document_loader.secure_semantic_search import secure_semantic_search
+from rag.rag_pipeline import run_rag
+from rag.confidence import calculate_confidence
 
 app = FastAPI(
     title="RBAC Semantic Search API",
@@ -9,25 +11,15 @@ app = FastAPI(
     version="1.0"
 )
 
+app.include_router(auth_router)
 
-# ---------- Request Schema ----------
-class SearchRequest(BaseModel):
-    role: str
-    query: str
+@app.post("/search")
+def search(query: str, user=Depends(get_current_user)):
+    role = user["role"]
 
-
-# ---------- Response Schema ----------
-class SearchResponse(BaseModel):
-    access_granted: bool
-    results: list
-
-
-# ---------- API Endpoint ----------
-@app.post("/search", response_model=SearchResponse)
-def search(request: SearchRequest):
     results = secure_semantic_search(
-        query=request.query,
-        user_role=request.role
+        query=query,
+        user_role=role
     )
 
     return {
@@ -41,4 +33,18 @@ def search(request: SearchRequest):
             }
             for doc, score in results
         ]
+    }
+@app.post("/rag")
+def rag_query(query: str, user=Depends(get_current_user)):
+    role = user["role"]
+
+    results = secure_semantic_search(query, role)
+    rag_output = run_rag(query, role, results)
+    confidence = calculate_confidence(results)
+
+
+    return {
+        "answer": rag_output["answer"],
+        "sources": rag_output["sources"],
+        
     }
