@@ -3,14 +3,19 @@ from milestone_3.llm import generate_answer
 
 
 def build_prompt(user_query: str, chunks: list):
-    retrieved_chunks = ""
-    for c in chunks:
-        retrieved_chunks += c["text"] + "\n\n"
+    retrieved_chunks = "\n".join(
+        f"- {c['text']}" for c in chunks
+    )
 
     prompt = f"""
-You are a company assistant.
-Answer strictly using the context below.
-If answer is not in context, say: "I don't know".
+You are an internal company Q&A assistant.
+
+Instructions:
+- Answer using ONLY the information in the context.
+- Extract factual points relevant to the question.
+- Do NOT add new information.
+- Present the answer clearly in 3–5 bullet points.
+- If the answer is not present, reply exactly: I don't know.
 
 Context:
 {retrieved_chunks}
@@ -21,6 +26,7 @@ Question:
 Answer:
 """
     return prompt
+
 
 
 def compute_confidence(chunks: list):
@@ -34,9 +40,10 @@ def compute_confidence(chunks: list):
 
 
 def rag_pipeline(query: str, user_role: str):
+    # RBAC-filtered retrieval
     chunks = search_with_rbac(query, user_role)
 
-    # Hallucination protection (MANDATORY + relevance threshold)
+    # Hard relevance guard
     if not chunks or chunks[0]["distance"] > 2.0:
         return {
             "answer": "I don't know",
@@ -44,10 +51,17 @@ def rag_pipeline(query: str, user_role: str):
             "confidence": 0.0
         }
 
+    # ✅ LIMIT CONTEXT SIZE (CRITICAL)
+    chunks = chunks[:3]
+
     prompt = build_prompt(query, chunks)
     answer = generate_answer(prompt)
-    confidence = compute_confidence(chunks)
 
+    # ✅ GUARD AGAINST EMPTY OR GARBAGE OUTPUT
+    if not answer or not answer.strip():
+        answer = "I don't know"
+
+    confidence = compute_confidence(chunks)
     sources = list(set(c["source"] for c in chunks))
 
     return {
@@ -55,4 +69,3 @@ def rag_pipeline(query: str, user_role: str):
         "sources": sources,
         "confidence": confidence
     }
-

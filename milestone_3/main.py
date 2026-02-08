@@ -17,5 +17,5 @@ def health_check():
 
 
 
-#server command : uvicorn milestone_3.main:app --reload
+#server command : uvicorn milestone_3.main:app --workers 2
 #swagger command : http://127.0.0.1:8000/docs
