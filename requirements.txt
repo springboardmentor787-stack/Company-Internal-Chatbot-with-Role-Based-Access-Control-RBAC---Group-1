@@ -1,18 +1,11 @@
-fastapi
-uvicorn
 streamlit
-pydantic
-python-jose
-passlib[bcrypt]
+torch
+transformers
 chromadb
 sentence-transformers
-transformers
-torch
 nltk
 tiktoken
 pandas
 pyyaml
 requests
-
-
-#pip install -r requirements.txt
+sentencepiece
