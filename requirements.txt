@@ -1,0 +1,18 @@
+langchain_community
+langchain_text_splitters
+langchain_chroma
+langchain_huggingface
+sentence_transformers
+fastapi
+uvicorn
+pyjwt
+passlib
+python-multipart
+transformers
+torch
+sentencepiece
+
+
+
+
+#pip install -r requirements.txt
