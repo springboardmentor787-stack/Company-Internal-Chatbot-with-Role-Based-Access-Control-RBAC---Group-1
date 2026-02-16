@@ -3,66 +3,106 @@ import pickle
 from sentence_transformers import SentenceTransformer
 
 
-# =========================
+# ===============================
 # LOAD RESOURCES
-# =========================
+# ===============================
+print("Loading FAISS + Metadata + Model...")
 
-try:
-    index = faiss.read_index("vector.index")
+index = faiss.read_index("vector.index")
 
-    with open("metadata.pkl", "rb") as f:
-        metadata = pickle.load(f)
+with open("metadata.pkl", "rb") as f:
+    metadata = pickle.load(f)
 
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
-    print("FAISS + Metadata + Model Loaded.")
-
-except Exception as e:
-    print("❌ Failed to load resources:", e)
-    raise e
+print("Secure RAG Ready.")
 
 
-# =========================
-# RBAC VALIDATION
-# =========================
+# ===============================
+# INTENT KEYWORDS
+# ===============================
+DEPT_KEYWORDS = {
+    "hr": [
+        "leave", "salary", "attendance", "benefits",
+        "policy", "maternity", "paternity", "payroll"
+    ],
 
-def validate_access(user_role: str, doc_dept: str) -> bool:
+    "finance": [
+        "budget", "revenue", "profit", "expense",
+        "tax", "invoice", "audit", "bonus"
+    ],
 
-    user_role = user_role.lower().strip()
-    doc_dept = doc_dept.lower().strip()
+    "engineering": [
+        "system", "api", "authentication", "backend",
+        "architecture", "deployment", "database", "server"
+    ],
 
-    # C-Level: All access
+    "marketing": [
+        "campaign", "brand", "ads", "leads",
+        "promotion", "social", "seo", "customer"
+    ]
+}
+
+
+# ===============================
+# INTENT DETECTOR
+# ===============================
+def detect_intent(question: str):
+
+    q = question.lower()
+
+    for dept, words in DEPT_KEYWORDS.items():
+        for w in words:
+            if w in q:
+                return dept
+
+    return None
+
+
+# ===============================
+# RBAC CHECK
+# ===============================
+def is_allowed(user_role, doc_dept, intent):
+
+    user_role = user_role.lower()
+    doc_dept = doc_dept.lower()
+
+    # C-Level: full access
     if user_role == "c-level":
         return True
 
-    # General docs
-    if doc_dept == "general":
+    # If intent exists and mismatches → block
+    if intent and intent != user_role:
+        return False
+
+    # Own department
+    if user_role == doc_dept:
         return True
 
-    # Same department
-    if user_role == doc_dept:
+    # General only for same intent
+    if doc_dept == "general" and intent == user_role:
         return True
 
     return False
 
 
-# =========================
-# MAIN SEARCH FUNCTION
-# =========================
-
-def secure_search(query: str, user_role: str, k: int = 3):
+# ===============================
+# MAIN SEARCH
+# ===============================
+def secure_search(query: str, user_role: str, k=5):
 
     # Encode query
-    query_vec = model.encode(
-        [query],
-        convert_to_numpy=True
-    )
+    emb = model.encode([query], convert_to_numpy=True)
 
-    # FAISS search (overfetch)
-    D, I = index.search(query_vec, k * 3)
+    # Search FAISS (fetch more for filtering)
+    D, I = index.search(emb, k * 3)
 
     results = []
 
+    # Detect user intent
+    intent = detect_intent(query)
+
+    # Filter results
     for idx in I[0]:
 
         if idx == -1:
@@ -71,26 +111,18 @@ def secure_search(query: str, user_role: str, k: int = 3):
         doc = metadata[idx]
 
         doc_dept = doc.get("department", "general")
+        roles = doc.get("roles", [])
 
-        # 🔧 SAFE ROLE NORMALIZATION
-        raw_roles = doc.get("roles", [])
+        # RBAC check
+        if not is_allowed(user_role, doc_dept, intent):
+            continue
 
-        if isinstance(raw_roles, str):
-            roles = [r.strip().lower() for r in raw_roles.split(",")]
-        elif isinstance(raw_roles, list):
-            roles = [r.strip().lower() for r in raw_roles]
-        else:
-            roles = []
-
-        # Permission check
-        if validate_access(user_role, doc_dept):
-
-            results.append({
-                "text": doc.get("chunk", ""),
-                "source": doc.get("file_name", "unknown"),
-                "department": doc_dept,
-                "roles": roles
-            })
+        results.append({
+            "text": doc["chunk"],
+            "source": doc["file_name"],
+            "department": doc_dept,
+            "roles": roles
+        })
 
         if len(results) >= k:
             break
@@ -98,15 +130,13 @@ def secure_search(query: str, user_role: str, k: int = 3):
     return results
 
 
-# =========================
-# TEST
-# =========================
-
+# ===============================
+# LOCAL TEST
+# ===============================
 if __name__ == "__main__":
 
-    print("Testing secure search...")
+    print("\n--- HR Test ---")
+    r = secure_search("what is sick leave policy", "hr")
 
-    test = secure_search("leave policy", "hr")
-
-    for r in test:
-        print(r)
+    for x in r:
+        print(x["source"], "->", x["department"])

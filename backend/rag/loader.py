@@ -5,12 +5,17 @@ DATA_PATH = Path(__file__).resolve().parent.parent.parent / "data"
 print("DATA PATH:", DATA_PATH)
 print("EXISTS:", DATA_PATH.exists())
 
+# loader.py
+
 ROLE_MAPPING = {
     "engineering": ["Engineering", "C-Level"],
     "finance": ["Finance", "C-Level"],
     "hr": ["HR", "C-Level"],
     "marketing": ["Marketing", "C-Level"],
-    "general": ["Employees", "C-Level"]
+    
+    # --- THE FIX ---
+    # Allow ALL roles to access General documents
+    "general": ["Employees", "HR", "Finance", "Marketing", "Engineering", "C-Level"] 
 }
 
 def read_md(file_path):

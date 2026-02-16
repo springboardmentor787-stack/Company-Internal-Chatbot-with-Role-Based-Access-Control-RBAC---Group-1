@@ -1,27 +1,50 @@
+# embed_store.py
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 from clean_chunker import chunked_docs
 
+
+print("Loading embedding model...")
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Init Chroma
 client = chromadb.PersistentClient(path="chroma_db")
+
+# Remove old collection safely
 try:
     client.delete_collection("docs")
+    print("Old collection deleted.")
 except:
-    pass
+    print("No old collection found.")
 
-collection = client.create_collection(name="docs", metadata={"hnsw:space": "cosine"})
-encoder = SentenceTransformer("all-MiniLM-L6-v2")
+collection = client.create_collection("docs")
+
+print("Storing documents in Chroma...")
+
 
 for i, doc in enumerate(chunked_docs):
-    emb = encoder.encode(doc["chunk"]).tolist()
+
+    text = doc["chunk"]
+
+    embedding = model.encode(text).tolist()
+
+    # ✅ Convert roles list → string
+    roles_str = ",".join([r.lower().strip() for r in doc["roles"]])
+
+    metadata = {
+        "file_name": doc["file_name"],
+        "department": doc["department"].lower().strip(),
+        "roles": roles_str      # <-- now string, not list
+    }
+
     collection.add(
-        ids=[str(i)],
-        embeddings=[emb],
-        documents=[doc["chunk"]],
-        metadatas=[{
-            "file_name": doc["file_name"],
-            "department": doc["department"],
-            "roles": ",".join(doc["roles"])
-        }]
+        documents=[text],
+        embeddings=[embedding],
+        metadatas=[metadata],
+        ids=[str(i)]
     )
 
-print(f"[OK] Stored {len(chunked_docs)} chunks in ChromaDB")
+
+print("✅ Chroma DB built successfully!")
+print("Total documents:", collection.count())
