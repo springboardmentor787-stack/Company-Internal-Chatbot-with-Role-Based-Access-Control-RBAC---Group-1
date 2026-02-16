@@ -6,9 +6,23 @@ venv/
 __pycache__/
 *.pyc
 
-# Local databases
+# Databases
+*.db
+*.sqlite3
+
+# Vector databases
 chroma/
-chroma.db
+chroma_db/
+vectordb/
+
+# Data folders
+data/
 
 # Logs
+logs/
+*.log
 access_audit_log.csv
+
+# OS files
+.DS_Store
+Thumbs.db
