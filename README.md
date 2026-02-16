@@ -125,11 +125,7 @@ Database	SQLite
 Authentication	PyJWT
 Version Control	GitHub
 
-📂 Data Sources
 
-RAG documents are provided via GitHub repository:
-
-https://github.com/springboardmentor441p-coderr/Fintech-data
 
 Document Categories
 •	📊 Finance – Quarterly reports, financial summaries
