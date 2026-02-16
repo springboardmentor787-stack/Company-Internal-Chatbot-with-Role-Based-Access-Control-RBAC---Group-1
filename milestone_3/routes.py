@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends, Query
 from fastapi.security import OAuth2PasswordRequestForm
 import sqlite3
 from milestone_3.database import DB_PATH
-from milestone_3.models import verify_password
+from milestone_3.models import verify_password, hash_password
 from milestone_3.auth import create_access_token, get_current_user
 from milestone_3.rbac import rbac_required
 from milestone_3.logs import log_access
@@ -11,6 +11,8 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+
+# ================= LOGIN =================
 @router.post("/login")
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
     username = form_data.username
@@ -44,13 +46,14 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
         "token_type": "bearer"
     }
 
+
+# ================= GET CURRENT USER =================
 @router.get("/me")
 def read_me(current_user: dict = Depends(get_current_user)):
     return current_user
 
 
-# --------- FINAL RBAC ENDPOINT (CORRECT MODEL) ---------
-
+# ================= RBAC SECURE SEARCH =================
 @router.get("/secure-search")
 def secure_search(
     department: str = Query(..., description="finance, hr, engineering, marketing, general"),
@@ -62,7 +65,7 @@ def secure_search(
     # RBAC CHECK
     rbac_required(department)(current_user)
 
-    # LOG
+    # LOG ACCESS
     log_access(username, role, f"/secure-search?department={department}", confidence=1.0)
 
     return {
@@ -70,6 +73,106 @@ def secure_search(
         "access_granted_for_role": role,
         "data": f"Confidential {department} data"
     }
+
+
+# ================= ADMIN PANEL ROUTES =================
+
+# ---- VIEW ALL USERS ----
+@router.get("/admin/users")
+def get_all_users(current_user: dict = Depends(get_current_user)):
+    if current_user["role"].lower() != "c-level":
+        raise HTTPException(status_code=403, detail="Access denied")
+
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT username, role FROM users")
+    users = cursor.fetchall()
+
+    conn.close()
+
+    return [{"username": u[0], "role": u[1]} for u in users]
+
+
+# ---- ADD NEW USER ----
+@router.post("/admin/add-user")
+def add_user(
+    username: str,
+    password: str,
+    role: str,
+    current_user: dict = Depends(get_current_user)
+):
+    if current_user["role"].lower() != "c-level":
+        raise HTTPException(status_code=403, detail="Access denied")
+
+    role = role.lower()
+
+    allowed_roles = ["engineering", "finance", "hr", "marketing", "employees", "c-level"]
+
+    if role not in allowed_roles:
+        raise HTTPException(status_code=400, detail="Invalid role")
+
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    # Check duplicate user
+    cursor.execute("SELECT username FROM users WHERE username=?", (username,))
+    if cursor.fetchone():
+        conn.close()
+        raise HTTPException(status_code=400, detail="User already exists")
+
+    hashed_password = hash_password(password)
+
+    cursor.execute(
+        "INSERT INTO users (username, password, role) VALUES (?, ?, ?)",
+        (username, hashed_password, role)
+    )
+
+    conn.commit()
+    conn.close()
+
+    return {"message": "User added successfully"}
+
+
+# ---- DELETE USER ----
+@router.delete("/admin/delete-user")
+def delete_user(
+    username: str,
+    current_user: dict = Depends(get_current_user)
+):
+    if current_user["role"].lower() != "c-level":
+        raise HTTPException(status_code=403, detail="Access denied")
+
+    # Prevent deleting yourself
+    if username == current_user["username"]:
+        raise HTTPException(status_code=400, detail="Cannot delete yourself")
+
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT role FROM users WHERE username=?", (username,))
+    user = cursor.fetchone()
+
+    if not user:
+        conn.close()
+        raise HTTPException(status_code=404, detail="User not found")
+
+    # Prevent deleting last C-Level
+    if user[0].lower() == "c-level":
+        cursor.execute("SELECT COUNT(*) FROM users WHERE role='c-level'")
+        count = cursor.fetchone()[0]
+        if count <= 1:
+            conn.close()
+            raise HTTPException(status_code=400, detail="Cannot delete last C-Level user")
+
+    cursor.execute("DELETE FROM users WHERE username=?", (username,))
+    conn.commit()
+    conn.close()
+
+    return {"message": "User deleted successfully"}
+
+
+
 
 # class ChatRequest(BaseModel):
 #     query: str
