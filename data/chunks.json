@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Employee salary details are confidential.",
+    "metadata": {
+      "department": "finance",
+      "role": "c-level",
+      "source": "salary_policy.md"
+    }
+  },
+  {
+    "text": "HR policies include leave and attendance rules.",
+    "metadata": {
+      "department": "hr",
+      "role": "hr",
+      "source": "hr_policy.md"
+    }
+  }
+]

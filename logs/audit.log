@@ -1,0 +1,652 @@
+2026-02-13 00:20:02,908 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:20:02,908 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:20:12,186 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:20:14,551 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:20:14,551 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:20:20,352 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:21:10,483 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:21:10,483 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:21:19,365 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:21:23,392 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:21:23,392 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:21:30,942 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:23:30,454 | INFO | user=mark | role=Marketing | endpoint=/marketing-data | query=None | status=ALLOWED
+2026-02-13 00:27:47,088 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:27:47,088 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:28:00,800 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:28:05,423 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:28:05,423 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:28:16,020 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:28:30,810 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:28:30,810 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:28:40,143 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:28:43,583 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:28:43,583 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:28:53,312 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:29:23,787 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:29:23,787 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:29:34,361 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:29:38,695 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:29:38,695 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:29:48,892 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:42:19,614 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:42:19,614 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:42:27,777 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:42:31,778 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:42:31,778 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:42:37,037 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:46:30,822 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:46:30,829 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:46:38,389 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:46:41,225 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:46:41,225 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:46:46,341 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:47:07,563 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:47:07,563 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:47:14,384 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:47:16,814 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:47:16,814 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:47:22,339 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:48:34,733 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:48:34,733 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:48:44,164 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:48:47,963 | INFO | Use pytorch device_name: cpu
+2026-02-13 00:48:47,963 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 00:48:53,355 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 00:58:34,973 | INFO | user=finance1 | role=Finance | endpoint=/finance-data | query=None | status=ALLOWED
+2026-02-13 01:24:05,712 | INFO | Use pytorch device_name: cpu
+2026-02-13 01:24:05,712 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 01:24:13,858 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 01:25:47,373 | INFO | Use pytorch device_name: cpu
+2026-02-13 01:25:47,373 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 01:25:59,152 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 01:26:04,161 | INFO | Use pytorch device_name: cpu
+2026-02-13 01:26:04,161 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 01:26:13,628 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 01:27:49,752 | INFO | Use pytorch device_name: cpu
+2026-02-13 01:27:49,752 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 01:28:01,410 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 01:28:05,698 | INFO | Use pytorch device_name: cpu
+2026-02-13 01:28:05,698 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 01:28:12,937 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:20:44,364 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:20:44,364 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:20:53,366 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:20:57,481 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:20:57,481 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:21:06,071 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:22:08,944 | INFO | user=finance1 | role=Finance | endpoint=/finance-data | query=None | status=ALLOWED
+2026-02-13 16:31:56,682 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:31:56,683 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:32:05,228 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:32:07,749 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:32:07,749 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:32:15,731 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:32:27,683 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:32:27,683 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:32:37,828 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:32:40,555 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:32:40,555 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:32:48,566 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:35:52,252 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:35:52,252 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:36:00,774 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:36:04,922 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:36:04,922 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:36:11,425 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:36:19,543 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:36:19,543 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:36:28,141 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:36:30,818 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:36:30,818 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:36:37,653 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:37:18,970 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:37:18,970 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:37:25,359 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:37:27,575 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:37:27,575 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:37:34,470 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:41:42,469 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:41:42,469 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:41:50,724 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:41:54,858 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:41:54,858 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:42:02,773 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:44:10,629 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:44:10,629 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:44:21,557 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:44:24,176 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:44:24,176 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:44:31,254 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:45:43,566 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:45:43,567 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:45:53,106 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:45:55,640 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:45:55,640 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:46:01,162 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:47:34,120 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:47:34,120 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:47:42,602 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:47:45,902 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:47:45,902 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:47:52,527 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:49:33,907 | INFO | user=mark | role=Marketing | endpoint=/marketing-data | query=None | status=ALLOWED
+2026-02-13 16:53:41,186 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:53:41,187 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:53:50,311 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 16:53:52,893 | INFO | Use pytorch device_name: cpu
+2026-02-13 16:53:52,894 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 16:53:58,884 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:06:45,887 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:06:45,887 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:06:53,721 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:06:56,870 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:06:56,870 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:07:03,026 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:44:06,367 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:44:06,367 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:44:16,434 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:44:20,569 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:44:20,569 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:44:27,094 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:44:43,057 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:44:43,057 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:44:51,933 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:44:54,716 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:44:54,716 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:45:04,080 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:45:54,407 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:45:54,407 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:46:02,993 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:46:06,986 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:46:06,986 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:46:13,815 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:48:05,749 | INFO | user=mark | role=Marketing | endpoint=/marketing-data | query=None | status=ALLOWED
+2026-02-13 17:50:41,152 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:50:41,152 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:50:51,417 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:50:56,030 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:50:56,030 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:51:03,849 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:57:00,275 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:57:00,275 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:57:12,302 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:57:17,618 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:57:17,618 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:57:24,638 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:58:30,486 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:58:30,488 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:58:39,786 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:58:42,484 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:58:42,488 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:58:49,122 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:59:02,948 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:59:02,948 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:59:12,806 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 17:59:15,537 | INFO | Use pytorch device_name: cpu
+2026-02-13 17:59:15,537 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 17:59:23,426 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:00:05,778 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:00:05,778 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:00:17,993 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:00:20,734 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:00:20,734 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:00:27,683 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:00:41,138 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:00:41,154 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:00:52,894 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:00:56,758 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:00:56,762 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:01:03,060 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:03:06,429 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:03:06,429 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:03:16,431 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:03:20,087 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:03:20,087 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:03:29,814 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:05:55,867 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:05:55,867 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:06:05,982 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:06:08,981 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:06:08,981 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:06:16,806 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:07:50,893 | INFO | user=mark | role=Marketing | endpoint=/marketing-data | query=None | status=ALLOWED
+2026-02-13 18:11:03,495 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:11:03,495 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:11:15,003 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:11:18,461 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:11:18,461 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:11:25,954 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:11:42,432 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:11:42,432 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:11:53,611 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:11:56,967 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:11:56,967 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:12:04,358 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:14:41,413 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:14:41,414 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:14:52,771 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:14:56,685 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:14:56,685 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:15:02,734 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:17:41,779 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:17:41,779 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:17:50,253 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:17:54,082 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:17:54,082 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:18:01,669 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:18:25,724 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:18:25,726 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:18:32,858 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:18:36,013 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:18:36,013 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:18:42,268 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:19:10,875 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:19:10,875 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:19:19,698 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:19:22,375 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:19:22,375 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:19:28,566 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:20:35,777 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:20:35,777 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:20:47,763 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:20:50,844 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:20:50,844 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:20:57,559 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:21:17,887 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:21:17,891 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:21:26,324 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:21:31,107 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:21:31,107 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:21:37,227 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:21:53,634 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:21:53,634 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:22:02,991 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:22:06,394 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:22:06,394 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:22:14,909 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:31:50,869 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:31:50,869 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:31:59,896 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:32:02,864 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:32:02,864 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:32:09,191 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:33:17,604 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:33:17,604 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:33:34,485 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:33:37,768 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:33:37,768 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:33:46,701 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:34:03,338 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:34:03,338 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:34:12,136 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 18:34:15,453 | INFO | Use pytorch device_name: cpu
+2026-02-13 18:34:15,454 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 18:34:23,143 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:14:30,328 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:14:30,329 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:14:43,103 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:14:47,872 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:14:47,872 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:14:55,100 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:16:59,728 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:16:59,728 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:17:07,664 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:17:10,356 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:17:10,356 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:17:16,972 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:20:06,123 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:20:06,123 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:20:24,015 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:20:27,235 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:20:27,235 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:20:33,481 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:32:16,632 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:32:16,637 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:32:27,932 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 19:32:31,909 | INFO | Use pytorch device_name: cpu
+2026-02-13 19:32:31,909 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-13 19:32:37,020 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:17:12,094 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:17:12,095 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:17:22,391 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:17:26,369 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:17:26,369 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:17:32,902 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:18:21,650 | INFO | user=finance1 | role=Finance | endpoint=/finance-data | query=None | status=ALLOWED
+2026-02-16 14:23:42,211 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:23:42,211 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:23:50,262 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:23:53,195 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:23:53,195 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:23:58,583 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:27:33,186 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:27:33,186 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:27:40,496 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:27:42,591 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:27:42,591 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:27:48,020 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:28:11,947 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:28:11,947 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:28:25,582 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:28:28,976 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:28:28,976 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:28:35,441 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:32:01,409 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:32:01,409 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:32:09,323 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:32:12,249 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:32:12,249 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:32:19,040 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:34:10,323 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:34:10,323 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:34:18,435 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:34:20,890 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:34:20,890 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:34:27,381 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:38:02,153 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:38:02,153 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:38:09,217 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:38:11,377 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:38:11,377 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:38:18,610 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:47:47,439 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:47:47,439 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:47:55,777 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:47:59,053 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:47:59,053 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:48:04,890 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:51:04,194 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:51:04,196 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:51:12,346 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:51:15,017 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:51:15,017 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:51:21,902 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:52:04,631 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:52:04,631 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:52:13,394 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:52:16,359 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:52:16,359 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:52:23,975 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:56:30,137 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:56:30,137 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:56:37,477 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:56:39,873 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:56:39,873 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:56:45,580 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:58:13,227 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:58:13,227 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:58:20,690 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 14:58:23,905 | INFO | Use pytorch device_name: cpu
+2026-02-16 14:58:23,905 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 14:58:30,211 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:00:45,971 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:00:45,971 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:00:57,431 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:01:00,200 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:01:00,200 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:01:06,142 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:02:07,585 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:02:07,585 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:02:15,740 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:02:18,410 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:02:18,410 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:02:24,588 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:05:25,856 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:05:25,856 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:05:32,808 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:05:35,162 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:05:35,162 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:05:40,028 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:08:19,634 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:08:19,634 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:08:26,947 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:08:29,842 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:08:29,842 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:08:35,370 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:11:22,699 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:11:22,699 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:11:30,286 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:11:33,138 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:11:33,138 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:11:39,410 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:13:18,929 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:13:18,929 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:13:27,091 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:13:29,362 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:13:29,362 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:13:33,926 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:14:10,463 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:14:10,463 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:14:16,953 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:14:19,164 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:14:19,164 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:14:24,895 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:15:01,475 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:15:01,475 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:15:09,063 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:15:11,621 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:15:11,621 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:15:17,777 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:18:12,196 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:18:12,199 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:18:19,267 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:18:22,242 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:18:22,242 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:18:28,556 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:20:52,754 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:20:52,754 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:21:00,280 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:21:03,034 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:21:03,034 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:21:09,018 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:24:31,794 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:24:31,794 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:24:39,349 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:24:41,812 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:24:41,812 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:24:47,204 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:31:33,211 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:31:33,211 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:31:41,182 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:31:43,687 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:31:43,687 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:31:49,373 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:38:07,284 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:38:07,284 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:38:14,269 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:38:16,493 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:38:16,493 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:38:23,512 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:41:12,193 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:41:12,193 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:41:19,134 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:41:21,702 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:41:21,702 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:41:28,667 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:41:39,921 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:41:39,921 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:41:53,684 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:41:56,553 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:41:56,553 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:42:02,222 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:43:21,399 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:43:21,399 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:43:29,425 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:43:31,999 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:43:31,999 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:43:38,182 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:45:22,566 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:45:22,566 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:45:30,229 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:45:32,863 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:45:32,863 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:45:38,528 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:46:35,940 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:46:35,940 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:46:49,340 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:46:52,258 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:46:52,258 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:46:58,910 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:47:10,677 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:47:10,677 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:47:20,202 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:47:22,859 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:47:22,861 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:47:29,858 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:51:35,840 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:51:35,840 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:51:43,569 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:51:46,305 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:51:46,305 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:51:52,575 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:55:43,828 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:55:43,828 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:55:52,148 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:55:55,152 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:55:55,152 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:56:01,934 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:57:01,671 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:57:01,671 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:57:08,223 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:57:11,520 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:57:11,520 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:57:16,735 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:57:24,133 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:57:24,133 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:57:32,233 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:57:34,677 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:57:34,677 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:57:40,049 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:57:51,916 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:57:51,916 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:58:00,132 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:58:02,618 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:58:02,618 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:58:08,035 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:58:33,542 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:58:33,542 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:58:41,287 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:58:43,602 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:58:43,602 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 15:58:48,525 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 15:59:58,163 | INFO | Use pytorch device_name: cpu
+2026-02-16 15:59:58,163 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:00:05,314 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:00:07,913 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:00:07,913 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:00:14,178 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:01:12,689 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:01:12,689 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:01:20,629 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:01:23,786 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:01:23,786 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:01:31,297 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:02:28,178 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:02:28,178 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:02:36,112 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:02:38,598 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:02:38,600 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:02:44,354 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:04:55,339 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:04:55,339 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:05:02,744 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:05:05,405 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:05:05,405 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:05:11,221 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:06:36,234 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:06:36,234 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:06:46,824 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:06:49,484 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:06:49,484 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:06:56,484 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:12:04,270 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:12:04,270 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:12:11,784 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:12:14,318 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:12:14,318 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:12:19,716 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:15:59,181 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:15:59,181 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:16:08,117 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:16:10,964 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:16:10,964 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:16:17,003 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:19:58,167 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:19:58,168 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:20:05,950 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:20:09,096 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:20:09,097 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:20:14,158 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:20:22,473 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:20:22,473 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:20:28,527 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:20:31,127 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:20:31,127 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:20:36,894 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:20:44,927 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:20:44,927 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:20:50,777 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:20:52,832 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:20:52,832 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:20:58,398 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:21:09,480 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:21:09,480 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:21:16,864 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:21:19,237 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:21:19,237 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:21:25,274 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:22:27,502 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:22:27,502 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:22:34,456 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:22:37,014 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:22:37,014 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:22:43,096 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:25:18,281 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:25:18,281 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:25:25,269 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:25:27,685 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:25:27,685 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:25:32,908 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:25:44,543 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:25:44,543 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:25:52,443 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:25:55,268 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:25:55,270 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:26:01,492 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:29:10,848 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:29:10,849 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:29:19,503 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:29:22,354 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:29:22,355 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:29:28,023 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:31:55,068 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:31:55,068 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:32:01,820 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:32:04,473 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:32:04,473 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:32:09,351 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:35:25,582 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:35:25,582 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:35:32,379 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:35:35,008 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:35:35,008 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:35:41,256 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:35:56,451 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:35:56,451 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:36:03,026 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:36:06,022 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:36:06,023 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:36:11,307 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:37:34,985 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:37:34,985 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:37:42,825 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:37:45,243 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:37:45,243 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:37:50,929 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:39:07,086 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:39:07,086 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:39:14,376 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-16 16:39:17,207 | INFO | Use pytorch device_name: cpu
+2026-02-16 16:39:17,207 | INFO | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-02-16 16:39:22,824 | INFO | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.

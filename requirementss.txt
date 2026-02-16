@@ -1,0 +1,38 @@
+# langchain
+# langchain-community
+# sentence-transformers
+# chromadb
+# pandas
+# unstructured
+# fastapi
+# streamlit
+# tiktoken
+langchain>=0.1.16
+langchain-core>=0.1.40
+langchain-community>=0.0.30
+langchain-text-splitters>=0.0.1
+sentence-transformers
+transformers
+chromadb
+pandas
+unstructured
+markdown
+fastapi
+streamlit
+tiktoken
+pypdf
+python-dotenv
+tqdm
+fastapi
+uvicorn
+sqlalchemy
+python-jose
+passlib[bcrypt]
+python-multipart
+pyjwt
+pyyaml
+requests
+pydantic
+torch
+
+nltk

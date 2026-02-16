@@ -1,4 +1,4 @@
-# rbac_retrieval.py
+# rbac_retrieval_demo.py
 # Milestone 2 – Role-Based Retrieval with Access Audit Logging
 
 import csv
