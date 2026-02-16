@@ -1,58 +1,233 @@
-# Company-Internal-Chatbot-with-Role-Based-Access-Control-RBAC---Group-1
+🏢 Company Internal Chatbot with Role-Based Access Control (RBAC)
+
+A secure AI-powered internal chatbot that uses Retrieval-Augmented Generation (RAG) to provide department-specific company information with strict role-based access control.
 
 📌 Project Overview
-This project focuses on building the backend foundation for a secure, company-wide internal chatbot. Instead of directly exposing internal documents to a language model, the system pre-processes and stores documents in a role-aware vector database, ensuring that security is enforced at the data level itself.
-🔐 Core Principle
-Semantic search should never bypass access control. Even if two documents are semantically similar, a user will only retrieve content they are authorized to access, strictly based on their role within the organization.
-👥 Supported Roles
-The system currently supports the following roles: HR Finance Marketing Engineering General Employees C-Level (full access across all departments)
-Each role has a predefined access scope that determines which department documents are visible to them.
-🗂️ Data Organization
-All company documents are organized department-wise inside the repository: Fintech-data/ ├── finance/ ├── marketing/ ├── hr/ ├── engineering/ └── general/
-This folder structure is directly used during ingestion to assign department-level metadata to each document, forming the base for RBAC enforcement. 📄 Supported File Formats The ingestion pipeline supports commonly used internal documentation formats: Markdown (.md) Used for policies, reports, and technical documentation CSV (.csv) Used for structured datasets and internal reports
-All files are parsed, cleaned, and normalized before further processing.
-🚀 Milestone 1: Document Ingestion & RBAC Foundation
-Milestone 1 focuses on preparing documents so they can later be used in a secure, role-aware Retrieval-Augmented Generation (RAG) system.
-1️⃣ Repository Exploration & Data Understanding Cloned and explored the provided GitHub repository Analyzed the folder structure and document distribution Identified clear department-wise data separation Verified supported file formats used across teams
-2️⃣ Role-to-Department Permission Mapping A clear role-to-department access map was defined to support RBAC. This mapping determines: Which roles can access which department folders Which documents are visible or hidden for a given role This permission logic forms the backbone of all future access control decisions.
-3️⃣ Document Ingestion Pipeline (LangChain) A document ingestion pipeline was implemented using LangChain, including: TextLoader for Markdown files CSVLoader for CSV files Each document is loaded programmatically from its respective department folder and processed in a uniform and scalable manner.
-4️⃣ Metadata Injection for RBAC During ingestion, mandatory metadata is injected into every document: dept → Department the document belongs to allowed_roles → Roles permitted to access the document source → Original filename This metadata is preserved throughout the pipeline and later used to enforce strict role-based filtering.
-5️⃣ Document Chunking To ensure efficient retrieval and accurate search: Documents are split into smaller chunks using RecursiveCharacterTextSplitter Chunk Configuration: 500 tokens per chunk 50 token overlap This ensures: Context is preserved Large documents remain searchable
-Access control can be applied at a fine-grained level
-6️⃣ Embedding Generation Each document chunk is converted into a numerical vector using: sentence-transformers/all-MiniLM-L6-v2 These embeddings capture the semantic meaning of the text and enable similarity-based retrieval.
-7️⃣ Vector Database Storage All embedded chunks are stored in a persistent ChromaDB vector database. Each vector is stored along with its metadata The database is persisted locally for reuse across runs Metadata remains tightly coupled with embeddings to support secure filtering.
-Embedding generation module  
-● Populated vector database with indexed documents  
-● Semantic search functionality and query interface  
-● Search quality and performance benchmarking report 
-● Build RBAC filtering logic for document access based on user roles  
-● Implement role hierarchy: C-Level access > department staff access > 
-general employee access Preprocess and normalize incoming queries  
-● Select most relevant document chunks for each query  
-● Test and validate role-based access: verify Finance users cannot 
-access HR documents, etc. 
-Role-based access control filtering module  
-● Query processing and normalization utilities  
-● Role permission configuration and hierarchy definition  
-● Role-based access validation test suite and results  
-# Milestone 1: Data Preparation & Vector Database
 
-## Objective
-Prepare company documents for semantic search by parsing, cleaning, chunking,
-embedding, and indexing them into a vector database with role-based metadata.
+This project builds a secure internal chatbot system that:
+•	Authenticates users using JWT
+•	Assigns department-based roles (Finance, Marketing, HR, Engineering, C-Level, Employees)
+•	Restricts document access based on role permissions
+•	Uses semantic search over a vector database
+•	Generates AI responses using a Retrieval-Augmented Generation (RAG) pipeline
+•	Provides source citation for transparency
+•	Logs access for auditing purposes
+The system ensures secure, fast, and role-restricted knowledge retrieval for internal company use.
 
-## Features Implemented
-- Parsed Markdown and CSV documents
-- Cleaned and normalized text
-- Chunked documents into manageable segments
-- Assigned department and role-based metadata
-- Generated sentence embeddings using Sentence Transformers
-- Indexed embeddings using FAISS / ChromaDB
+🎯 Project Objectives
 
-## How to Run
+This project builds a secure internal chatbot system that:
+•	Authenticates users using JWT
+•	Assigns department-based roles (Finance, Marketing, HR, Engineering, C-Level, Employees)
+•	Restricts document access based on role permissions
+•	Uses semantic search over a vector database
+•	Generates AI responses using a Retrieval-Augmented Generation (RAG) pipeline
+•	Provides source citation for transparency
+•	Logs access for auditing purposes
+The system ensures secure, fast, and role-restricted knowledge retrieval for internal company use.
 
-### 1. Load and preprocess documents
-```bash
-python loader.py
-python clean_chunker.py
-# Company-Internal-Chatbot-with-Role-Based-Access-Control-RBAC---Group-1
+
+🏗 System Architecture
+User
+   ↓
+Streamlit Frontend
+   ↓
+FastAPI Backend
+   ↓
+JWT Authentication + RBAC Middleware
+   ↓
+Role-Filtered Semantic Search (Vector DB)
+   ↓
+RAG Pipeline (LLM + Context Augmentation)
+   ↓
+AI Response with Source Citation
+
+🔹 Milestone 1: Data Preparation & Vector DB (Weeks 1–2)
+•	Environment setup
+•	Clone RAG document repository
+•	Document exploration & role mapping
+•	Preprocessing & chunking (300–512 tokens)
+•	Metadata tagging with role permissions
+Deliverables:
+•	Cleaned document chunks
+•	Role-document mapping
+•	Preprocessing module
+•	Validation report
+________________________________________
+🔹 Milestone 2: Backend Authentication & Search (Weeks 3–4)
+•	Embedding generation using all-MiniLM-L6-v2
+•	Vector database setup (Chroma/Qdrant)
+•	Semantic search implementation
+•	RBAC filtering logic
+•	Role hierarchy definition
+Deliverables:
+•	Vector database with metadata
+•	Search module
+•	RBAC filtering module
+•	Role validation test cases
+________________________________________
+🔹 Milestone 3: RAG Pipeline & LLM Integration (Weeks 5–6)
+•	FastAPI backend setup
+•	SQLite user database
+•	JWT authentication
+•	RBAC middleware
+•	LLM integration (OpenAI/HuggingFace)
+•	RAG pipeline implementation
+•	Source attribution & confidence scoring
+Deliverables:
+•	Secure backend
+•	JWT token system
+•	RAG pipeline
+•	Prompt templates
+•	API endpoints
+•	Test cases
+________________________________________
+🔹 Milestone 4: Frontend & Deployment (Weeks 7–8)
+•	Streamlit chat interface
+•	Login system
+•	Role display
+•	Source citation display
+•	API integration
+•	System testing
+•	Documentation & deployment preparation
+Deliverables:
+•	Streamlit application
+•	Integration test suite
+•	API documentation
+•	User guide
+•	Deployment guide
+•	Performance & security report
+•	Demo video
+•	Production-ready GitHub repository
+
+
+🚀 Features
+•	🔐 Secure JWT Authentication
+•	🛡 Role-Based Access Control (RBAC)
+•	🧠 Semantic Search using Vector Embeddings
+•	🤖 Retrieval-Augmented Generation (RAG)
+•	📚 Source Citation with Responses
+•	📊 Confidence Scoring
+•	🖥 Streamlit Chat UI
+•	🗄 SQLite User Database
+•	📜 Access Audit Logging
+•	⚡ Fast Retrieval (<500ms target)
+•	⏱ End-to-End Response (<3s target)
+
+🧰 Tech Stack
+Component	Technology
+Backend	FastAPI (Python 3.8+)
+Frontend	Streamlit
+Vector Database	Chroma / Qdrant (Free Tier)
+Embeddings	Sentence Transformers (all-MiniLM-L6-v2)
+LLM	OpenAI GPT (Free Trial) / HuggingFace / LLaMA
+Database	SQLite
+Authentication	PyJWT
+Version Control	GitHub
+
+📂 Data Sources
+
+RAG documents are provided via GitHub repository:
+
+https://github.com/springboardmentor441p-coderr/Fintech-data
+
+Document Categories
+•	📊 Finance – Quarterly reports, financial summaries
+•	📈 Marketing – Campaign reports, market analysis
+•	👥 HR – Employee data, handbook, policies
+•	⚙ Engineering – Technical architecture, processes
+•	📘 General – Company policies, employee handbook
+Each document is tagged with metadata specifying:
+•	Department
+•	Source file
+•	Accessible roles
+
+
+⚙ Installation Guide
+1️⃣ Clone Repository
+git clone 
+cd company-internal-chatbot
+
+2️⃣ Create Virtual Environment
+python -m venv venv
+Activate environment:
+Windows:
+venv\Scripts\activate
+Mac/Linux:
+source venv/bin/activate
+
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+4️⃣ Run Backend (FastAPI)
+uvicorn backend.main:app --reload
+Backend runs at:
+
+http://127.0.0.1:8000
+
+5️⃣ Run Frontend (Streamlit)
+streamlit run frontend/app.py
+
+💬 Usage
+1.	Open Streamlit application
+2.	Login with valid credentials
+3.	Ask department-related questions
+4.	System retrieves relevant documents
+5.	AI generates response using RAG
+6.	Sources are displayed below the response
+Example Role Access
+Role	Access
+Finance	Only finance documents
+Marketing	Only marketing documents
+HR	Only HR documents
+Engineering	Only technical documents
+Employees	General company documents
+C-Level	All documents
+
+
+
+📁 Project Structure
+company-internal-chatbot/
+│
+├── backend/
+│   ├── main.py
+│   ├── auth.py
+│   ├── rbac.py
+│   ├── rag_pipeline.py
+│   ├── database.py
+│   └── models.py
+│
+├── frontend/
+│   └── app.py
+│
+├── data/
+├── vector_store/
+├── requirements.txt
+└── README.md
+
+📊 Evaluation Criteria
+Milestone	Target
+Document Parsing	100% documents parsed
+Metadata Accuracy	Accurate role mapping
+Unauthorized Access	Zero data leaks
+Retrieval Latency	< 500ms
+End-to-End Response	< 3 seconds
+Frontend Usability	Intuitive & responsive
+Documentation	Complete & structured
+
+🧪 Testing & Validation
+•	Role-based access validation
+•	Unauthorized access prevention tests
+•	RAG accuracy testing
+•	Performance benchmarking
+•	Edge-case handling
+•	Security validation
+
+
+🚀 Deployment
+•	Complete system integration
+•	Security testing
+•	Performance optimization
+•	Documentation finalization
+•	Demo video creation
+•	GitHub production-ready repository
