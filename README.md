@@ -1,3 +1,15 @@
+# 🏢 Company Internal Chatbot
+## 🌐 Live Demo
+
+| Component | Link |
+|-----------|------|
+| Frontend (Streamlit UI) | https://kaushal1528-company-chatbot-frontend.hf.space/ |
+| Backend API (FastAPI Docs) | https://kaushal1528-chatbot.hf.space/docs |
+
+⚠️ **Note:** Both frontend and backend are hosted on Hugging Face Spaces (Free CPU tier).  
+The first request may take 20–40 seconds if the Space is sleeping.
+
+---
 ## 📌 Problem Statement
 
 The goal of this project is to build a secure internal chatbot system that processes natural
