@@ -34,6 +34,7 @@ def search(query: str, user=Depends(get_current_user)):
             for doc, score in results
         ]
     }
+
 @app.post("/rag")
 def rag_query(query: str, user=Depends(get_current_user)):
     role = user["role"]
@@ -42,9 +43,8 @@ def rag_query(query: str, user=Depends(get_current_user)):
     rag_output = run_rag(query, role, results)
     confidence = calculate_confidence(results)
 
-
     return {
         "answer": rag_output["answer"],
         "sources": rag_output["sources"],
-        
+        "confidence": confidence
     }

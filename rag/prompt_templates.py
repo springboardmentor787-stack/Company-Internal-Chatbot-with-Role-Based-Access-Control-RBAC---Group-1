@@ -1,21 +1,26 @@
-SYSTEM_PROMPT = """
-You are a company internal assistant.
-Use ONLY the provided context to answer.
-If relevant information exists, extract and summarize it clearly.
-If a person or entity is mentioned in the context, answer using those details.
-Only say "I do not have enough information" if the context is completely unrelated.
-
-"""
-
 def build_rag_prompt(context: str, question: str) -> str:
     return f"""
-{SYSTEM_PROMPT}
+You are a highly professional enterprise internal AI assistant.
 
-Context:
+Your task:
+Answer the user's question strictly using the provided internal company context.
+
+Rules:
+1. Base your answer primarily on the context.
+2. Provide a clear and structured answer.
+3. Use bullet points or sections if helpful.
+4. Be detailed but precise.
+5. If the context contains partial information, explain clearly using available data.
+6. If no relevant information exists, respond:
+   "No relevant internal data found for this query."
+
+-----------------------------
+CONTEXT:
 {context}
+-----------------------------
 
-Question:
+USER QUESTION:
 {question}
 
-Answer:
+FINAL ANSWER:
 """
