@@ -57,7 +57,19 @@ def get_accessible_files():
 
 def get_chatbot_response(question, department):
     headers = {"Authorization": f"Bearer {st.session_state['token']}"}
-    payload = {"question": question, "department": department}
+    
+    # --- NEW: SEND CHAT HISTORY FOR CONTEXT ---
+    # We take the last 4 messages to save space but provide context
+    simple_history = [
+        {"role": m["role"], "content": m["content"]} 
+        for m in st.session_state["messages"][-4:] 
+    ]
+    
+    payload = {
+        "question": question, 
+        "department": department,
+        "history": simple_history  # <--- Sending history to backend
+    }
     
     try:
         response = requests.post(f"{API_BASE_URL}/chat", json=payload, headers=headers)
@@ -83,9 +95,12 @@ def get_confidence_style(score):
 # LOGIN SCREEN
 # -------------------------------------------------------------------------
 if st.session_state["token"] is None:
-    st.title("🔒 Corporate Secure Login")
-    col1, col2 = st.columns([1, 2])
-    with col1:
+    # We use 3 columns: Left(spacer), Middle(content), Right(spacer)
+    col1, col2, col3 = st.columns([1, 2, 1])
+
+    with col2:
+        st.title("🔒 Corporate Secure Login")
+        st.markdown("Please sign in to access company documents.")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         if st.button("Login", use_container_width=True):
@@ -95,22 +110,20 @@ if st.session_state["token"] is None:
 # MAIN APP
 # -------------------------------------------------------------------------
 else:
-   # --- SIDEBAR ---
+    # --- SIDEBAR ---
     with st.sidebar:
         st.title(f"👤 {st.session_state['user'].upper()}")
         st.caption(f"Role: **{st.session_state['role'].upper()}**")
         
-        # --- NEW: Side-by-Side Buttons ---
+        # --- Side-by-Side Action Buttons ---
         col1, col2 = st.columns(2)
         
         with col1:
-            # 🧹 CLEAR BUTTON: Just empties the message list
             if st.button("🧹 Clear", use_container_width=True):
                 st.session_state["messages"] = []
                 st.rerun()
                 
         with col2:
-            # 🚪 LOGOUT BUTTON: Your existing logic
             if st.button("🚪 Logout", use_container_width=True):
                 st.session_state["token"] = None
                 st.session_state["messages"] = []
@@ -119,22 +132,23 @@ else:
         st.divider()
         st.subheader("📂 Accessible Files")
         
-        # --- YOUR EXISTING FILE LIST LOGIC (UNCHANGED) ---
+        # --- FILE LISTING ---
         files_map = get_accessible_files()
         if files_map:
             for dept, files in files_map.items():
+                # Force expander to show even if empty, but show (Empty) text inside
                 with st.expander(f"📁 {dept.upper()}", expanded=False):
                     if files:
                         for f in files:
                             st.markdown(f"- 📄 `{f}`")
-                    # No 'else' block here anymore!
+                    else:
+                        st.caption("*(Empty Folder)*")
         else:
             st.caption("⚠️ Could not load file list.")
 
     # --- CHAT AREA ---
     st.title("🤖 Enterprise RAG Chatbot")
     
-    # Department Selector
     dept_options = ["hr", "finance", "marketing", "engineering", "general"]
     selected_dept = st.selectbox("Select Target Department:", dept_options)
 
@@ -147,7 +161,7 @@ else:
                 score = msg.get("confidence", 0)
                 bg_color, text_color = get_confidence_style(score)
                 
-                # 2. FIXED: High Contrast Confidence Box
+                # Confidence Box
                 st.markdown(f"""
                 <div style="
                     padding: 10px; 
@@ -181,7 +195,6 @@ else:
             if sources:
                 avg_confidence = int(sum(s['confidence'] for s in sources) / len(sources))
 
-        # Save & Display Assistant Response
         with st.chat_message("assistant"):
             st.markdown(answer)
             

@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, List, Dict
 import os
 
 from sqlalchemy.orm import Session
@@ -17,11 +17,22 @@ from llm_engine import generate_answer
 from rbac_rules import get_allowed_departments
 
 # -------------------------------
-# CONFIG
+# CONFIG & PATH FINDER
 # -------------------------------
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
-DATA_PATH = "data"  # <--- Ensure this points to your actual data folder
+
+# Smart Path Finder: Locates the 'data' folder even if running from a subfolder
+possible_paths = ["data", "../data", "../../data", "backend/data"]
+DATA_PATH = "data"  # Default fallback
+
+for path in possible_paths:
+    if os.path.exists(path) and os.path.isdir(path):
+        DATA_PATH = path
+        print(f"✅ DATA LOADING: Found 'data' folder at: '{os.path.abspath(DATA_PATH)}'")
+        break
+else:
+    print("⚠️ WARNING: Could not find 'data' folder. File listing will be empty.")
 
 app = FastAPI(title="Company RBAC Chatbot")
 
@@ -49,6 +60,8 @@ class Token(BaseModel):
 class ChatInput(BaseModel):
     department: str
     question: str
+    # NEW: Accepts chat history for context
+    history: List[Dict[str, str]] = [] 
 
 # -------------------------------
 # SECURITY UTILS
@@ -75,25 +88,42 @@ def get_current_user_role(token: str = Depends(oauth2_scheme)):
     except JWTError:
         raise credentials_exception
 
+# main.py
+
 # -------------------------------
-# HELPER: QUERY EXPANSION
+# HELPER: CONTEXTUAL QUERY EXPANSION
 # -------------------------------
-def expand_query(original_query):
+def expand_query(original_query, history):
     """
-    Uses the LLM to rewrite the user's question into a better search query.
+    Rewrites the user's question ONLY if there is chat history.
+    If it's the first question, we use it exactly as is to avoid errors.
     """
+    
+    # 1. SAFETY FIX: If no history, DO NOT REWRITE.
+    # Just use the user's question directly. It works better.
+    if not history:
+        print(f"ℹ️ First Question (No History): Using raw query -> '{original_query}'")
+        return original_query
+
+    # 2. Contextual Rewrite (Only runs if we have history)
+    last_turn = history[-2:]
+    history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in last_turn])
+    
     prompt = f"""
-    Rewrite the following user question to be more professional and keyword-rich for a corporate document search.
+    Rewrite the 'User Question' to be a standalone search query based on the 'Chat History'.
+    Replace pronouns (it, he, that) with specific nouns from the history.
+    
+    Chat History:
+    {history_text}
     
     User Question: {original_query}
     
-    Rewritten Question:
+    Standalone Search Query:
     """
     
-    # We reuse your existing LLM engine to do the rewriting!
     try:
         expanded_query = generate_answer(prompt)
-        print(f"🔄 Query Expansion: '{original_query}' -> '{expanded_query.strip()}'")
+        print(f"🔄 Contextual Expansion: '{original_query}' -> '{expanded_query.strip()}'")
         return expanded_query.strip()
     except Exception as e:
         print(f"⚠️ Expansion failed: {e}. Using original query.")
@@ -132,6 +162,7 @@ def chat(
     user_role = current_user["role"]
     target_department = data.department.lower().strip()
     question = data.question.strip()
+    chat_history = data.history  # <--- Get history from frontend
 
     # --- RBAC CHECK ---
     allowed_depts = get_allowed_departments(user_role)
@@ -147,12 +178,12 @@ def chat(
         search_scope.append("general")
 
     # ---------------------------------------------------------
-    # 1. EXPAND THE QUERY
+    # 1. EXPAND THE QUERY (WITH HISTORY)
     # ---------------------------------------------------------
-    search_query = expand_query(question)
+    search_query = expand_query(question, chat_history)
 
     # ---------------------------------------------------------
-    # 2. RETRIEVE (Using the Expanded Query)
+    # 2. RETRIEVE
     # ---------------------------------------------------------
     results = retrieve_chunks(
         query=search_query,  
@@ -164,7 +195,6 @@ def chat(
     # ---------------------------------------------------------
     # 3. FILTER LOW CONFIDENCE (Threshold: 35%)
     # ---------------------------------------------------------
-    # Adjusted to 35 to allow short HR answers while filtering noise
     valid_results = [r for r in results if r['confidence'] >= 35]
 
     if not valid_results:
@@ -179,8 +209,8 @@ def chat(
     context_text = "\n\n".join([r["chunk"] for r in valid_results])
     
     prompt = f"""
-    Use the following context to provide a detailed and comprehensive answer to the question.
-    If the context contains a list, include all items. 
+    Read the context below and answer the question in a detailed, natural paragraph.
+    Do not just list keywords. Write full sentences.
     
     Context:
     {context_text}
@@ -189,7 +219,6 @@ def chat(
     Detailed Answer:
     """
     
-    # Safety truncation
     if len(prompt) > 2000: prompt = prompt[:2000]
 
     answer = generate_answer(prompt)
@@ -214,11 +243,10 @@ def get_accessible_files(current_user: dict = Depends(get_current_user_role)):
         
         if os.path.exists(dept_path):
             try:
-                # Get only files, ignore subfolders
                 files = [f for f in os.listdir(dept_path) if os.path.isfile(os.path.join(dept_path, f))]
                 accessible_files[dept] = files
             except Exception as e:
-                accessible_files[dept] = [f"Error reading folder: {str(e)}"]
+                accessible_files[dept] = [f"Error: {str(e)}"]
         else:
             accessible_files[dept] = [] 
             
