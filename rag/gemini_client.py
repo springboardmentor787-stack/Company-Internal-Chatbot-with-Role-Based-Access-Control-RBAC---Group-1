@@ -1,47 +1,34 @@
 import os
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-if not GEMINI_API_KEY:
-    raise RuntimeError("❌ GEMINI_API_KEY not found in .env file")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+if not GOOGLE_API_KEY:
+    raise RuntimeError("❌ GOOGLE_API_KEY not found in environment")
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+genai.configure(api_key=GOOGLE_API_KEY)
 
 class LLMClient:
     def __init__(self):
-        self.model = "gemini-2.5-flash"
-        self.config = types.GenerateContentConfig(
-    temperature=0.1,          # more factual
-    max_output_tokens=900,    # allow full structured answers
-)
+        self.model = genai.GenerativeModel("gemini-1.5-flash")
 
     def generate(self, prompt: str) -> str:
         try:
-            response = client.models.generate_content(
-                model=self.model,
-                contents=prompt,
-                config=self.config
+            response = self.model.generate_content(
+                prompt,
+                generation_config={
+                    "temperature": 0.1,
+                    "max_output_tokens": 900,
+                }
             )
 
-            if not response.candidates:
+            if not response.text:
                 return "No response generated."
 
-            candidate = response.candidates[0]
-
-            
-            full_text = ""
-            for part in candidate.content.parts:
-                if hasattr(part, "text"):
-                    full_text += part.text
-
-            return full_text.strip()
+            return response.text.strip()
 
         except Exception as e:
             print("Gemini Error:", str(e))
             return "An error occurred while generating the response."
-
-
