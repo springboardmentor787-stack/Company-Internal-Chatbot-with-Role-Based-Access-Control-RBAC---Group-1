@@ -1,5 +1,5 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from load_documents import load_documents
+from document_loader.load_documents import load_documents
 
 
 def chunk_documents():
@@ -20,12 +20,7 @@ def chunk_documents():
 
     print(f"Total chunks created: {len(chunks)}")
 
-    # Optional: inspect one chunk
-    sample_chunk = chunks[0]
-    print("\nSample chunk metadata:")
-    print(sample_chunk.metadata)
-    print("\nSample chunk content (first 300 chars):")
-    print(sample_chunk.page_content[:300])
+    
 
     return chunks
 

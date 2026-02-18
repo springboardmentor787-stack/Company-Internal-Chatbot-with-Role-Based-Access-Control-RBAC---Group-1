@@ -2,79 +2,11 @@ import streamlit as st
 import requests
 import jwt
 import time
+import os
 
 BASE_URL = "http://127.0.0.1:8000"
 
 st.set_page_config(page_title="Company Internal AI", layout="wide")
-
-# ---------- CLEAN CSS ----------
-st.markdown("""
-<style>
-
-/* Background */
-.stApp {
-    background-color: #0e1117;
-    color: white;
-}
-
-/* Sidebar */
-[data-testid="stSidebar"] {
-    background-color: #111827;
-}
-
-/* Chat spacing */
-[data-testid="stChatMessage"] {
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-/* Confidence badge */
-.confidence-badge {
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    margin-top: 8px;
-    display: inline-block;
-    font-weight: 600;
-}
-
-.high-confidence {
-    background-color: rgba(34,197,94,0.2);
-    color: #22c55e;
-}
-
-.medium-confidence {
-    background-color: rgba(234,179,8,0.2);
-    color: #eab308;
-}
-
-.low-confidence {
-    background-color: rgba(239,68,68,0.2);
-    color: #ef4444;
-}
-
-/* Input */
-textarea {
-    background-color: #1f2937 !important;
-    color: white !important;
-    border-radius: 10px !important;
-    border: 1px solid #374151 !important;
-}
-
-/* Buttons */
-.stButton>button {
-    background: #2563eb;
-    color: white;
-    border-radius: 8px;
-    font-weight: 600;
-}
-
-.stButton>button:hover {
-    background: #1d4ed8;
-}
-
-</style>
-""", unsafe_allow_html=True)
 
 # ---------- SESSION ----------
 if "token" not in st.session_state:
@@ -85,6 +17,105 @@ if "role" not in st.session_state:
     st.session_state.role = None
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "theme" not in st.session_state:
+    st.session_state.theme = "dark"
+
+# ---------- THEME ----------
+def apply_theme():
+    if st.session_state.theme == "dark":
+        background = "#0e1117"
+        text_color = "white"
+        sidebar_bg = "#111827"
+        card_bg = "#111827"
+        input_bg = "#1f2937"
+        border_color = "#374151"
+    else:
+        background = "#f3f4f6"        # soft neutral background
+        text_color = "#111827"
+        sidebar_bg = "#ffffff"
+        card_bg = "#ffffff"
+        input_bg = "#ffffff"
+        border_color = "#e5e7eb"
+
+    st.markdown(f"""
+    <style>
+
+    /* Main App Background */
+    .stApp {{
+        background-color: {background};
+        color: {text_color};
+    }}
+
+    /* Sidebar */
+    [data-testid="stSidebar"] {{
+        background-color: {sidebar_bg};
+        border-right: 1px solid {border_color};
+    }}
+
+    /* Chat Container Card Effect */
+    .main > div {{
+        padding-top: 20px;
+    }}
+
+    section[data-testid="stChatMessage"] {{
+        background-color: {card_bg};
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }}
+
+    /* Input */
+    textarea {{
+        background-color: {input_bg} !important;
+        color: {text_color} !important;
+        border-radius: 12px !important;
+        border: 1px solid {border_color} !important;
+        padding: 10px !important;
+    }}
+
+    /* Buttons */
+    .stButton>button {{
+        background: #2563eb;
+        color: white;
+        border-radius: 10px;
+        font-weight: 600;
+        border: none;
+    }}
+
+    .stButton>button:hover {{
+        background: #1d4ed8;
+    }}
+
+    /* Confidence badge */
+    .confidence-badge {{
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        margin-top: 8px;
+        display: inline-block;
+        font-weight: 600;
+    }}
+
+    .high-confidence {{
+        background-color: rgba(34,197,94,0.15);
+        color: #16a34a;
+    }}
+
+    .medium-confidence {{
+        background-color: rgba(234,179,8,0.15);
+        color: #ca8a04;
+    }}
+
+    .low-confidence {{
+        background-color: rgba(239,68,68,0.15);
+        color: #dc2626;
+    }}
+
+    </style>
+    """, unsafe_allow_html=True)
+
+apply_theme()
 
 # ---------- LOGIN ----------
 def login():
@@ -128,19 +159,82 @@ def login():
 # ---------- CHAT UI ----------
 def chat_ui():
 
-    # Sidebar
     with st.sidebar:
         st.markdown("## 🏢 Company Portal")
         st.markdown("---")
+
+        
+
         st.markdown(f"👤 **User:** {st.session_state.username}")
-        st.markdown(f"🔐 **Role:** `{st.session_state.role}`")
+        st.markdown(
+            f"<span style='background:#2563eb; padding:4px 10px; border-radius:8px; font-size:12px;'>🔐 {st.session_state.role}</span>",
+            unsafe_allow_html=True
+        )
+
+        st.markdown("---")
+        st.markdown("## 📁 Accessible Files")
+        st.markdown("---")
+
+        base_path = "Fintech-data"
+        user_role = st.session_state.role
+
+        role_folder_map = {
+            "Finance": "Finance",
+            "HR": "HR",
+            "Engineering": "engineering",
+            "Marketing": "marketing",
+            "General": "general",
+            "C-Level": None
+        }
+
+        if user_role == "C-Level":
+            accessible_folders = ["Finance", "HR", "engineering", "marketing", "general"]
+        else:
+            accessible_folders = []
+            folder = role_folder_map.get(user_role)
+            if folder:
+                accessible_folders.append(folder)
+
+        for folder in accessible_folders:
+            folder_path = os.path.join(base_path, folder)
+
+            if os.path.exists(folder_path):
+                with st.expander(f"📂 {folder.upper()}", expanded=False):
+                    files = [
+                        f for f in os.listdir(folder_path)
+                        if f.endswith((".md", ".csv"))
+                    ]
+
+                    if files:
+                        for file in files:
+                            st.markdown(f"- 📄 {file}")
+                    else:
+                        st.markdown("_No documents available_")
+
+        st.markdown("---")
+        st.markdown("## 🕘 Session History")
+
+        if len(st.session_state.messages) == 0:
+            st.caption("No messages yet")
+        else:
+            for msg in st.session_state.messages:
+                if msg["role"] == "user":
+                    st.markdown(
+                        f"<div style='font-size:12px; opacity:0.7;'>• {msg['content'][:40]}...</div>",
+                        unsafe_allow_html=True
+                    )
+
         st.markdown("---")
 
         if st.button("🧹 Clear Chat"):
             st.session_state.messages = []
+            st.rerun()
 
         if st.button("🚪 Logout"):
-            st.session_state.clear()
+            st.session_state.token = None
+            st.session_state.username = None
+            st.session_state.role = None
+            st.session_state.messages = []
             st.rerun()
 
     st.markdown("## 💬 Company Internal AI Assistant")
@@ -161,6 +255,7 @@ def chat_ui():
 
                 if msg.get("confidence") is not None:
                     conf = msg["confidence"]
+                    percentage = int(conf * 100)
 
                     if conf >= 0.7:
                         label = "High"
@@ -173,7 +268,7 @@ def chat_ui():
                         css_class = "low-confidence"
 
                     st.markdown(
-                        f"<div class='confidence-badge {css_class}'>🔎 {label} Confidence ({conf})</div>",
+                        f"<div class='confidence-badge {css_class}'>🔎 {label} Confidence ({percentage}%)</div>",
                         unsafe_allow_html=True
                     )
 
@@ -183,7 +278,6 @@ def chat_ui():
                         unsafe_allow_html=True
                     )
 
-    # Chat input
     prompt = st.chat_input("Ask something securely...")
 
     if prompt:
@@ -225,6 +319,8 @@ def chat_ui():
                                 st.write(f"- {s}")
 
                     if confidence is not None:
+                        percentage = int(confidence * 100)
+
                         if confidence >= 0.7:
                             label = "High"
                             css_class = "high-confidence"
@@ -236,7 +332,7 @@ def chat_ui():
                             css_class = "low-confidence"
 
                         st.markdown(
-                            f"<div class='confidence-badge {css_class}'>🔎 {label} Confidence ({confidence})</div>",
+                            f"<div class='confidence-badge {css_class}'>🔎 {label} Confidence ({percentage}%)</div>",
                             unsafe_allow_html=True
                         )
 

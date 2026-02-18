@@ -1,6 +1,6 @@
 # Central role hierarchy configuration
 
-ROLE_HIERARCHY = {
+ROLE_HIERARCHY = {"General": ["General"],
     "HR": ["HR", "General"],
     "Finance": ["Finance", "General"],
     "Engineering": ["Engineering", "General"],

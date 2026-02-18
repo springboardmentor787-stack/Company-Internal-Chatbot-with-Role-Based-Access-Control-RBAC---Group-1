@@ -29,6 +29,8 @@ def secure_semantic_search(query: str, user_role: str):
             query,
             k=TOP_K
         )
+        
+
 
         # Apply RBAC AFTER search
         authorized_results = [

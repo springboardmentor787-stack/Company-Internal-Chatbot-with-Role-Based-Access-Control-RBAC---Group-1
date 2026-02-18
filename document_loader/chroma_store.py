@@ -1,7 +1,7 @@
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
-from chunk_documents import chunk_documents
+from document_loader.chunk_documents import chunk_documents
 
 PERSIST_DIR = "chroma_db"
 
