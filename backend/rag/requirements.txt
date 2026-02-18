@@ -1,5 +1,7 @@
 fastapi
+uvicorn
 streamlit
+requests
 langchain
 sentence-transformers
 chromadb
@@ -8,3 +10,4 @@ python-dotenv
 pyjwt
 passlib[bcrypt]
 python-jose[cryptography]
+python-multipart
