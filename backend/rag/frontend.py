@@ -4,7 +4,7 @@ import requests
 # -------------------------------------------------------------------------
 # CONFIGURATION
 # -------------------------------------------------------------------------
-API_BASE_URL = "http://localhost:8000"  # Ensure this matches your backend
+API_BASE_URL = "https://my-chatbot-backend.onrender.com"
 
 st.set_page_config(
     page_title="AI Corporate Chatbot",
