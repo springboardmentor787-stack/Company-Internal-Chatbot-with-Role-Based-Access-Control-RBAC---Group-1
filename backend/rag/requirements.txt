@@ -3,7 +3,6 @@ uvicorn
 streamlit
 requests
 langchain
-sentence-transformers
 chromadb
 pandas
 python-dotenv
