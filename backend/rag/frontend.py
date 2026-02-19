@@ -4,7 +4,7 @@ import requests
 # -------------------------------------------------------------------------
 # CONFIGURATION
 # -------------------------------------------------------------------------
-API_BASE_URL = "https://my-chatbot-backend.onrender.com"
+API_BASE_URL = "http://localhost:8000"  # Ensure this matches your backend
 
 st.set_page_config(
     page_title="AI Corporate Chatbot",
@@ -92,7 +92,7 @@ def get_confidence_style(score):
         return "#f8d7da", "#721c24"  # Light Red Background, Dark Red Text
 
 # -------------------------------------------------------------------------
-# LOGIN SCREEN
+# LOGIN SCREEN (Centered)
 # -------------------------------------------------------------------------
 if st.session_state["token"] is None:
     # We use 3 columns: Left(spacer), Middle(content), Right(spacer)
@@ -101,8 +101,10 @@ if st.session_state["token"] is None:
     with col2:
         st.title("🔒 Corporate Secure Login")
         st.markdown("Please sign in to access company documents.")
+        
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
+        
         if st.button("Login", use_container_width=True):
             login(username, password)
 

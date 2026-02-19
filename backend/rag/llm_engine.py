@@ -1,25 +1,32 @@
-import os
-import google.generativeai as genai
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-# 1. Initialize the API
-# It will look for the key in Render's environment variables
-API_KEY = os.getenv("GEMINI_API_KEY")
+# -------------------------------------------------------------------------
+# CONFIG & MODEL LOADING
+# -------------------------------------------------------------------------
+MODEL_NAME = "google/flan-t5-base"  # You can swap this for 'google/flan-t5-large' if you have 16GB RAM
 
-if not API_KEY:
-    print("⚠️ WARNING: GEMINI_API_KEY is not set in environment variables!")
+print(f"Loading LLM Model: {MODEL_NAME}...")
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
 
-genai.configure(api_key=API_KEY)
+print("LLM Loaded.")
 
-# 2. Load the free, fast model
-model = genai.GenerativeModel('gemini-1.5-flash')
+# llm_engine.py
+
+# ... imports ...
 
 def generate_answer(prompt):
-    """
-    Generates a natural language answer using Google's Gemini API.
-    Works exactly the same as the local model, but uses 0MB of your server RAM!
-    """
-    try:
-        response = model.generate_content(prompt)
-        return response.text
-    except Exception as e:
-        return f"⚠️ API Error: {str(e)}"
+    input_ids = tokenizer(prompt, return_tensors="pt", max_length=1024, truncation=True).input_ids
+
+    outputs = model.generate(
+        input_ids,
+        max_length=512,          # <--- INCREASED from 200 to 512 (More text!)
+        min_length=50,           # <--- INCREASED from 20 to 50 (Forces longer answers)
+        num_beams=4,
+        repetition_penalty=1.3,  # <--- LOWERED slightly (1.5 was too strict, cutting answers short)
+        no_repeat_ngram_size=3,
+        early_stopping=True
+    )
+
+    answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return answer
