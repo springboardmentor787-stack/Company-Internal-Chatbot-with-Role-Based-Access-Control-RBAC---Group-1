@@ -1,14 +1,18 @@
+
+    
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-if not GEMINI_API_KEY:
-    raise RuntimeError("❌ GEMINI_API_KEY not found in .env file")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-genai.configure(api_key=GEMINI_API_KEY)
+if not GOOGLE_API_KEY:
+    raise RuntimeError("❌ GOOGLE_API_KEY not found in environment variables")
+
+genai.configure(api_key=GOOGLE_API_KEY)
+
 
 class LLMClient:
     def __init__(self):
