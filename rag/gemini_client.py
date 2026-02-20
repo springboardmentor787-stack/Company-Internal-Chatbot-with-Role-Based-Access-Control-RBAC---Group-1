@@ -4,15 +4,15 @@ import google.generativeai as genai
 
 load_dotenv()
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-if not GOOGLE_API_KEY:
-    raise RuntimeError("❌ GOOGLE_API_KEY not found in environment")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise RuntimeError("❌ GEMINI_API_KEY not found in .env file")
 
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
 
 class LLMClient:
     def __init__(self):
-        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.model = genai.GenerativeModel("gemini-2.5-flash")
 
     def generate(self, prompt: str) -> str:
         try:
@@ -23,9 +23,6 @@ class LLMClient:
                     "max_output_tokens": 900,
                 }
             )
-
-            if not response.text:
-                return "No response generated."
 
             return response.text.strip()
 

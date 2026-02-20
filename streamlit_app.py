@@ -191,9 +191,15 @@ def chat_ui():
             accessible_folders = ["Finance", "HR", "engineering", "marketing", "general"]
         else:
             accessible_folders = []
+
+            # Add role-specific folder
             folder = role_folder_map.get(user_role)
             if folder:
                 accessible_folders.append(folder)
+
+            # ALWAYS add General
+            accessible_folders.append("general")
+
 
         for folder in accessible_folders:
             folder_path = os.path.join(base_path, folder)
