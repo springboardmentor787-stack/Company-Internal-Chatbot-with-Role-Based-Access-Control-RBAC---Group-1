@@ -1,3 +1,14 @@
+---
+title: RBAC RAG Chatbot
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: "1.54.0"
+python_version: "3.11"
+app_file: streamlit_app.py
+pinned: false
+---
 # 🔐 Enterprise Internal AI Assistant with Role-Based Access Control (RBAC)
 
 An enterprise-grade internal AI chatbot designed to securely retrieve and generate department-specific company intelligence using **Retrieval-Augmented Generation (RAG)**, semantic search, and strict **Role-Based Access Control (RBAC)**.
