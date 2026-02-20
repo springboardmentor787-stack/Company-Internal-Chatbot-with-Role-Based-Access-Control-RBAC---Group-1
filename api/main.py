@@ -4,9 +4,11 @@ from api.auth.jwt_utils import get_current_user
 from document_loader.secure_semantic_search import secure_semantic_search
 from rag.rag_pipeline import run_rag
 from rag.confidence import calculate_confidence
-from api.database import engine, SessionLocal
-from api.auth.user_models import Base, User
+
+
 from api.auth.auth_utils import hash_password
+from api.database import engine, SessionLocal, Base
+from api.auth.user_models import User
 
 app = FastAPI(
     title="RBAC Semantic Search API",
