@@ -17,12 +17,11 @@ app = FastAPI(
 )
 @app.on_event("startup")
 def startup_event():
-    print("🚀 Initializing database...")
+    print("========== STARTUP TRIGGERED ==========")
 
-    # Create tables
     Base.metadata.create_all(bind=engine)
+    print("SQLite tables created")
 
-    # Seed default users
     db = SessionLocal()
 
     default_users = [
@@ -47,8 +46,11 @@ def startup_event():
     db.commit()
     db.close()
 
-    print("✅ Database ready.")
+    print("Users seeded")
 
+    
+
+    print("========== STARTUP FINISHED ==========")
 app.include_router(auth_router)
 
 @app.post("/search")
@@ -86,3 +88,41 @@ def rag_query(query: str, user=Depends(get_current_user)):
         "sources": rag_output["sources"],
         "confidence": confidence
     }
+@app.get("/documents")
+def get_documents(user=Depends(get_current_user)):
+    import os
+
+    base_path = "Fintech-data"
+    role = user["role"]
+
+    role_folder_map = {
+        "Finance": "Finance",
+        "HR": "HR",
+        "Engineering": "engineering",
+        "Marketing": "marketing",
+        "General": "general",
+        "C-Level": None
+    }
+
+    if role == "C-Level":
+        folders = ["Finance", "HR", "engineering", "marketing", "general"]
+    else:
+        folders = []
+        folder = role_folder_map.get(role)
+        if folder:
+            folders.append(folder)
+        folders.append("general")
+
+    response = {}
+
+    for folder in folders:
+        folder_path = os.path.join(base_path, folder)
+
+        if os.path.exists(folder_path):
+            files = [
+                f for f in os.listdir(folder_path)
+                if f.endswith((".md", ".csv"))
+            ]
+            response[folder] = files
+
+    return response

@@ -1,11 +1,16 @@
 import streamlit as st
 import requests
-import jwt
+from jose import jwt
 import time
 import os
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+
 
 BASE_URL = "http://127.0.0.1:8000"
-
 st.set_page_config(page_title="Company Internal AI", layout="wide")
 
 # ---------- SESSION ----------
@@ -145,7 +150,10 @@ def login():
 
             if response.status_code == 200:
                 token = response.json()["access_token"]
-                decoded = jwt.decode(token, options={"verify_signature": False})
+                SECRET_KEY = os.getenv("SECRET_KEY")
+                ALGORITHM = "HS256"
+
+                decoded = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
 
                 st.session_state.token = token
                 st.session_state.username = username
@@ -175,47 +183,32 @@ def chat_ui():
         st.markdown("## 📁 Accessible Files")
         st.markdown("---")
 
-        base_path = "Fintech-data"
-        user_role = st.session_state.role
+        headers = {
+    "Authorization": f"Bearer {st.session_state.token}"
+}
 
-        role_folder_map = {
-            "Finance": "Finance",
-            "HR": "HR",
-            "Engineering": "engineering",
-            "Marketing": "marketing",
-            "General": "general",
-            "C-Level": None
-        }
+        try:
+            response = requests.get(
+                f"{BASE_URL}/documents",
+                headers=headers,
+                timeout=20
+            )
 
-        if user_role == "C-Level":
-            accessible_folders = ["Finance", "HR", "engineering", "marketing", "general"]
-        else:
-            accessible_folders = []
+            if response.status_code == 200:
+                documents = response.json()
 
-            # Add role-specific folder
-            folder = role_folder_map.get(user_role)
-            if folder:
-                accessible_folders.append(folder)
+                for folder, files in documents.items():
+                    with st.expander(f"📂 {folder.upper()}"):
+                        if files:
+                            for file in files:
+                                st.markdown(f"- 📄 {file}")
+                        else:
+                            st.markdown("_No documents available_")
+            else:
+                st.warning("Unable to load documents")
 
-            # ALWAYS add General
-            accessible_folders.append("general")
-
-
-        for folder in accessible_folders:
-            folder_path = os.path.join(base_path, folder)
-
-            if os.path.exists(folder_path):
-                with st.expander(f"📂 {folder.upper()}", expanded=False):
-                    files = [
-                        f for f in os.listdir(folder_path)
-                        if f.endswith((".md", ".csv"))
-                    ]
-
-                    if files:
-                        for file in files:
-                            st.markdown(f"- 📄 {file}")
-                    else:
-                        st.markdown("_No documents available_")
+        except:
+            st.warning("Backend not reachable")
 
         st.markdown("---")
         st.markdown("## 🕘 Session History")

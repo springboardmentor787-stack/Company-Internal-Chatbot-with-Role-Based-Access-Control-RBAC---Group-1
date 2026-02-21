@@ -4,8 +4,8 @@ from langchain_community.document_loaders import TextLoader, CSVLoader
 BASE_PATH = "Fintech-data"
 
 ROLE_MAP = {
-    "Finance": "finance",
-    "HR": "hr",
+    "Finance": "Finance",
+    "HR": "HR",
     "Marketing": "marketing",
     "Engineering": "engineering",
     "General": "general"
