@@ -1,19 +1,32 @@
----
-title: RBAC RAG Chatbot
-emoji: 🤖
-colorFrom: blue
-colorTo: purple
-sdk: streamlit
-sdk_version: "1.54.0"
-python_version: "3.11"
-app_file: streamlit_app.py
-pinned: false
----
+
 # 🔐 Enterprise Internal AI Assistant with Role-Based Access Control (RBAC)
 
 An enterprise-grade internal AI chatbot designed to securely retrieve and generate department-specific company intelligence using **Retrieval-Augmented Generation (RAG)**, semantic search, and strict **Role-Based Access Control (RBAC)**.
 
 This project was developed as part of the **Infosys Springboard Internship Program**, simulating a real-world enterprise AI knowledge management system.
+
+
+---
+
+## 🌍 Live Deployment (Hugging Face Spaces)
+
+This project is fully deployed using **Hugging Face Spaces**, with the frontend and backend hosted as separate cloud services.
+
+### 🖥 Frontend – Streamlit UI  
+🔗 https://gafoor04-rbac-frontend.hf.space  
+
+
+📘 Interactive BACKEND API Documentation (Swagger):  
+https://gafoor04-rbac-backend.hf.space/docs  
+
+---
+
+**Deployment Architecture:**
+- Frontend and backend deployed as independent Hugging Face Spaces  
+- Secure JWT-based authentication between services  
+- Environment variables configured securely in Space settings  
+- Python 3.11 runtime environment  
+- Fully serverless free-tier cloud deployment  
 
 ---
 
@@ -182,6 +195,51 @@ The system follows a modular, layered enterprise architecture that separates aut
 
 
 ![System Architecture](assets/system_architecture.png)
+
+
+---
+
+## 📷 Application Screenshots
+
+The following screenshots demonstrate the live system behavior, RBAC enforcement, and response quality.
+
+---
+
+### 🔐 Login Interface
+
+Secure authentication using username and password.  
+JWT token is issued upon successful login.
+
+![Login Screen](assets/login_screen.png)
+
+---
+
+### 🧠 High Confidence Response (C-Level Access)
+
+Example of a successful query where the user has proper access rights.  
+The system retrieves relevant documents, constructs context, and generates a structured executive-style response.
+
+- Confidence Score Displayed
+- Response Time Measured
+- Source Transparency Enabled
+
+![High Confidence Response](assets/high_confidence_response.png)
+
+---
+
+### 🚫 Strict RBAC Enforcement (Access Denied Example)
+
+Example of role-based restriction in action.  
+A Finance user attempting to access restricted system architecture information receives:
+
+- Access Denied Response
+- Low Confidence Indicator
+- No unauthorized document leakage
+
+This demonstrates search-level RBAC enforcement.
+
+![RBAC Access Denied](assets/rbac_access_denied.png)
+
 
 ---
 
@@ -390,7 +448,9 @@ Follow the steps below to set up and run the project locally.
 
 ### 📌 1. Prerequisites
 
-- Python 3.11+
+- Python 3.11.x (Strictly Recommended)
+-⚠️ Note: This project is stabilized and tested on Python 3.11. 
+Using Python 3.13/3.14 may cause dependency conflicts (Torch / LangChain).
 - Git
 - Internet connection (for Gemini API access)
 
@@ -399,8 +459,10 @@ Follow the steps below to set up and run the project locally.
 ### 📥 2. Clone the Repository
 
 ```bash
-git clone <url>
-cd COMPANY-INTERNAL-CHATBOT
+git clone https://github.com/springboardmentor787-stack/Company-Internal-Chatbot-with-Role-Based-Access-Control-RBAC---Group-1.git
+cd Company-Internal-Chatbot-with-Role-Based-Access-Control-RBAC---Group-1
+git fetch origin
+git checkout Abdul_Gafoor
 ```
 
 ---
@@ -408,7 +470,7 @@ cd COMPANY-INTERNAL-CHATBOT
 ### 🐍 3. Create Virtual Environment
 
 ```bash
-python -m venv venv
+py -3.11 -m venv venv
 ```
 
 Activate:
@@ -438,8 +500,8 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory:
 
 ```
-GEMINI_API_KEY=your_google_gemini_api_key
-MODEL_TYPE=gemini
+GOOGLE_API_KEY=your_google_gemini_api_key
+SECRET_KEY=your_secret_key_here
 ```
 
 ⚠️ Important:
