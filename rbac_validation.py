@@ -1,4 +1,10 @@
-def is_access_allowed(user_role, metadata):
-    allowed_roles = metadata.get("allowed_roles", "")
-    allowed_roles = [r.strip() for r in allowed_roles.split(",")]
-    return user_role in allowed_roles
+ROLE_ACCESS = {
+    "finance": ["finance"],
+    "engineering": ["engineering"],
+    "hr": ["hr"],
+    "c_level": ["finance", "engineering", "hr", "general"]
+}
+
+def is_access_allowed(role, metadata):
+    doc_dept = metadata.get("department", "").lower()
+    return doc_dept in ROLE_ACCESS.get(role, [])

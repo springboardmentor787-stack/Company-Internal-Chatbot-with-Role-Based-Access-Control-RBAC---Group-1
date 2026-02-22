@@ -1,7 +1,14 @@
+"""
+Milestone 3 Backend Prototype:
+RBAC-secured Retrieval-Augmented Generation (RAG)
+"""
+
 from langchain_chroma import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from transformers import pipeline
 from rbac_validation import is_access_allowed
+
+TOP_K = 5 # Number of documents retrieved before RBAC filtering
 
 
 def main():
@@ -38,20 +45,16 @@ def main():
     # ---------------------------
     # Retrieve relevant documents
     # ---------------------------
-    retrieved_docs = vectordb.similarity_search(query, k=5)
+    retrieved_docs = vectordb.similarity_search(query, k=TOP_K)
 
-    # ---------------------------
-    # Apply RBAC filtering (CRITICAL)
-    # ---------------------------
     authorized_docs = []
-
     for doc in retrieved_docs:
         if is_access_allowed(role, doc.metadata):
             authorized_docs.append(doc)
 
-    # 🚫 Stop immediately if no authorized documents
     if not authorized_docs:
-        print("\n❌ Access Denied: No authorized documents found for this role.")
+        print("\n❌ ACCESS DENIED")
+        print("No authorized documents available for this role.")
         return
 
     # ---------------------------
