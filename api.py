@@ -3,6 +3,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 import sqlite3
+import os
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 
@@ -52,7 +53,10 @@ vectordb = Chroma(
 # LOCAL LLM (OLLAMA)
 # ============================
 
-llm = Ollama(model="llama3")
+llm = Ollama(
+    model="llama3",
+    base_url=os.getenv("OLLAMA_HOST", "http://localhost:11434")
+)
 
 # ============================
 # DATABASE HELPER

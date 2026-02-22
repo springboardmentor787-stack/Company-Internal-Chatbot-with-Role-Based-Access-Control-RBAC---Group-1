@@ -3,11 +3,12 @@ import requests
 import time
 import json
 import pandas as pd
+import os
 from chat_db import *
 
 init_chat_db()
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 # ----------------------------
 # SESSION STATE INIT

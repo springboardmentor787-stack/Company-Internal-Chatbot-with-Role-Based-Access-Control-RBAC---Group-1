@@ -1,9 +1,10 @@
+fastapi
+uvicorn
+streamlit
+requests
+pandas
+python-multipart
 langchain
 langchain-community
-langchain-huggingface
-langchain-chroma
-sentence-transformers
 chromadb
-pandas
-unstructured
-python-multipart
+ollama
