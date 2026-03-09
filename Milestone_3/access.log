@@ -1,0 +1,10 @@
+2026-03-03 17:45:42 hr hr "who is prime ministry of india" 0.39
+2026-03-03 17:55:14 hr hr "who is prime ministry of india" 0.39
+2026-03-03 17:58:41 hr hr "who is prime ministry of india?" 0.38
+2026-03-03 18:07:24 hr hr "How is employee performance evaluated?" 43.49
+2026-03-03 18:11:58 hr hr "How is employee performance evaluated?" 46.34
+2026-03-03 18:13:35 hr hr "How is employee performance evaluated?" 41.9
+2026-03-03 18:17:51 hr hr "What are the official working hours?" 52.23
+2026-03-03 18:40:24 | USER: hr | ROLE: hr | QUERY: "How are promotions decided?" | CONFIDENCE: 38.35% | RESPONSE_TIME: 13112.35ms
+2026-03-03 18:49:17 | USER: hr | ROLE: hr | QUERY: "How are promotions decided?" | CONFIDENCE: 22.94% | RESPONSE_TIME: 13.22
+2026-03-03 18:53:42 | USER: hr | ROLE: hr | QUERY: "How are promotions decided?" | CONFIDENCE: 39.35% | RESPONSE_TIME: 15.84
