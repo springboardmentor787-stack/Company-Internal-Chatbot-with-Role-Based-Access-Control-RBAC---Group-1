@@ -116,10 +116,10 @@ ROLE_DOCUMENTS = {
 
 DEPARTMENT_FOLDERS = {
     "hr": ["HR_Policy.pdf", "Leave_Guidelines.docx"],
-    "finance": ["Budget_2024.pdf"],
-    "marketing": ["Campaign_Analysis.docx"],
-    "engineering": ["System_Architecture.pdf"],
-    "general": ["Company_Code_of_Conduct.pdf"]
+    "finance": ["financial_summary.md" , "quarterly_financial_report.md" ],
+    "marketing": ["marketing_report_q4_2024.md" , "marketing_report_2024.md" , "marketing_report_q1_2024.md" ,"marketing_report_q2_2024.md" , "marketing_report_q3_2024.md"],
+    "engineering": ["engineering_master_doc.md"],
+    "general": ["employee_handbook.md"]
 }
 
 # ================= C-LEVEL FEATURES =================
@@ -835,5 +835,6 @@ if st.session_state.token:
             Enterprise AI Platform | Infosys Springboard Internship 6.0
             </div>
 """, unsafe_allow_html=True)
+
 
     st.markdown("</div>", unsafe_allow_html=True)
