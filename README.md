@@ -8,6 +8,7 @@
 ⚠️ **Note:** Both frontend and backend are hosted on Hugging Face Spaces (Free CPU tier).
 The first request may take 20–40 seconds if the Space is sleeping.
 
+---
 
 <h2> 📌 Project Overview </h2>
 <h6>The Company Internal Chatbot is an AI-powered system that allows employees to query internal company documents using natural language.</h6>
