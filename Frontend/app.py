@@ -9,7 +9,7 @@ import os
 
 
 
-BACKEND_URL = "http://127.0.0.1:8000"
+API_URL = "https://lakshmanpv-chartbot.hf.space"
 
 st.set_page_config(page_title="Company AI Chatbot", layout="wide")
 
@@ -143,17 +143,13 @@ def login_page():
 
         st.markdown("""
         <div class="login-card">
-
         <div class="ai-icon">🤖</div>
-
         <div class="login-title">
         🔐 Secure Login
         </div>
-
         <div class="login-subtitle">
         Enterprise AI Access Portal
         </div>
-
         <div class="security-msg">
         🔒 Secured with JWT Authentication
         </div>
@@ -185,7 +181,7 @@ def login_page():
                 with st.spinner("🔄 Verifying credentials..."):
 
                     response = requests.post(
-                        f"{BACKEND_URL}/login",
+                        f"{API_URL}/login",
                         data={"username": username, "password": password},
                         timeout=5
                     )
@@ -197,7 +193,7 @@ def login_page():
                     st.session_state.token = response.json()["access_token"]
 
                     user_res = requests.get(
-                        f"{BACKEND_URL}/me",
+                        f"{API_URL}/me",
                         headers=headers(),
                         timeout=5
                     )
@@ -477,7 +473,7 @@ def chat_page():
         start_time = time.time()
 
         response = requests.post(
-            f"{BACKEND_URL}/chat",
+            f"{API_URL}/chat",
             headers=headers(),
             json={"query": query}
         )
@@ -619,7 +615,7 @@ def admin_page():
     if st.button("Add User"):
 
         res = requests.post(
-            f"{BACKEND_URL}/admin/add-user",
+            f"{API_URL}/admin/add-user",
             params={
                 "username": new_username,
                 "password": new_password,
@@ -643,7 +639,7 @@ def admin_page():
     if st.button("Delete User"):
 
         res = requests.delete(
-            f"{BACKEND_URL}/admin/delete-user",
+            f"{API_URL}/admin/delete-user",
             params={"username": delete_username},
             headers=headers()
         )
@@ -675,11 +671,9 @@ else:
                         <div class="sidebar-box-title">
                         🏢 Enterprise Dashboard
                         </div>
-
 <p style="color:white;font-size:13px;">
 Secure Role-Based Access System
 </p>
-
 </div>
 """, unsafe_allow_html=True)
     st.sidebar.divider()
@@ -688,9 +682,7 @@ Secure Role-Based Access System
     with st.sidebar.container():
         st.markdown(f"""
         <div class="profile-card">
-
         <div class="profile-title">👤 USER PANEL</div>
-
         <div class="profile-info">
         User: <span class="username">PIRLA VENKATA LAKSHMI NARAYANA</span>
         </div>
@@ -698,11 +690,9 @@ Secure Role-Based Access System
         <div class="profile-info">
         Role: <span class="role">{role.upper()}</span>
         </div>
-
         <div class="profile-info">
         Login Time: {login_time}
         </div>
-
         </div>
         """, unsafe_allow_html=True)
 
@@ -720,15 +710,12 @@ Secure Role-Based Access System
     # ================= SYSTEM STATUS =================
     st.sidebar.markdown("""
 <div class="sidebar-box">
-
 <div class="sidebar-box-title">
 🟢 System Status
 </div>
-
 <p><b>Backend:</b> <span class="status-online">Online</span></p>
 <p><b>Vector DB:</b> <span class="status-online">Active</span></p>
 <p><b>AI Model:</b> <span class="status-online">Ready</span></p>
-
 </div>
 """, unsafe_allow_html=True)
 
@@ -802,16 +789,13 @@ Secure Role-Based Access System
 
     st.sidebar.markdown("""
 <div class="sidebar-box">
-
 <div class="sidebar-box-title">
 💡 Example Questions
 </div>
-
 <p>• Show HR leave policy</p>
 <p>• Summarize financial report</p>
 <p>• Explain system architecture</p>
 <p>• What is company code of conduct?</p>
-
 </div>
 """, unsafe_allow_html=True)
 
@@ -835,6 +819,5 @@ if st.session_state.token:
             Enterprise AI Platform | Infosys Springboard Internship 6.0
             </div>
 """, unsafe_allow_html=True)
-
 
     st.markdown("</div>", unsafe_allow_html=True)
