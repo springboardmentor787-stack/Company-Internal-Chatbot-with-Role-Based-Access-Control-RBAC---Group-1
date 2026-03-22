@@ -3,7 +3,7 @@
 | Component |	Link|
 |-----------|-----|
 |Frontend (Streamlit UI) |	https://Lakshmanpv-company-chatbot-frontend.hf.space/|
-|Backend API (FastAPI Docs)|	https://Lakshmanpv-chatbot.hf.space/docs|
+|Backend API (FastAPI Docs)|	[https://Lakshmanpv-chatbot.hf.space](https://huggingface.co/spaces/Lakshmanpv/chartbot)/docs|
 
 ⚠️ **Note:** Both frontend and backend are hosted on Hugging Face Spaces (Free CPU tier).
 The first request may take 20–40 seconds if the Space is sleeping.
