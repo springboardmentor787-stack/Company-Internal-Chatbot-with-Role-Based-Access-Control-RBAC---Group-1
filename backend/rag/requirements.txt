@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+chromadb
+sentence-transformers
+torch
+transformers
+langchain
+pandas
+python-dotenv
+pyjwt
+passlib[bcrypt]
+python-jose
+cryptography
+python-multipart
+sqlalchemy
+streamlit
+requests
